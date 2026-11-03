@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Propozycje strony pronat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Jost:wght@500&amp;display=swap">
+<style>
+/* the start page of the drafts sent to the client: her colours, the same type and buttons as the visions */
+:root{--ink:#27282A;--ink2:#3B3E44;--ink3:#5A5F66;--rule:#C5CAD0;--cold:#01A3D4;--hot:#E33C12;--soft:#F1F5F7;
+  --head:"Jost","Century Gothic","Segoe UI",system-ui,sans-serif;--body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;color-scheme:light}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:19px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1200px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+header{border-bottom:2px solid var(--ink)}
+header .wrap{display:flex;align-items:center;gap:16px;min-height:84px}
+header img{display:block;height:58px;width:auto}
+header b{font-weight:600;font-size:17px;display:block;line-height:1.2}
+header span{font-size:15px;color:var(--ink2)}
+h1{margin:44px 0 0;font-family:var(--head);font-weight:500;font-size:clamp(32px,4vw,52px);line-height:1.08;text-wrap:balance}
+.lead{margin:14px 0 0;max-width:38em;color:var(--ink2);font-size:20px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin:36px 0 0;padding:0;list-style:none}
+.card{display:flex;flex-direction:column;height:100%;border:2px solid var(--ink);background:#fff;box-shadow:6px 6px 0 var(--cold);text-decoration:none;color:inherit;
+  transition:transform .16s cubic-bezier(.33,1,.68,1),box-shadow .16s cubic-bezier(.33,1,.68,1)}
+.card img{display:block;flex:none;width:100%;height:auto;min-height:0;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-bottom:1px solid var(--rule)}
+.card__b{display:flex;flex-direction:column;gap:8px;padding:18px 22px 22px;flex:1}
+.card__l{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;font-size:18px}
+.card h2{margin:4px 0 0;font-family:var(--head);font-weight:500;font-size:28px;line-height:1.15}
+.card p{margin:0;color:var(--ink2);font-size:17px;line-height:1.5}
+.card__go{margin-top:auto;padding-top:12px}
+.card__go span{display:inline-flex;align-items:center;min-height:50px;padding:0 20px;border:2px solid var(--ink);background:var(--ink);color:#fff;font-weight:600;font-size:18px;box-shadow:4px 4px 0 var(--hot)}
+@media (hover:hover) and (pointer:fine){.card:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--cold)}}
+.note{margin:40px 0 56px;padding:20px 24px;max-width:48em;background:var(--soft);border-left:5px solid var(--hot)}
+.note p{margin:0;font-size:18px}
+.note p+p{margin-top:8px}
+@media (max-width:960px){.cards{grid-template-columns:minmax(0,1fr);max-width:560px}}
+@media (max-width:600px){body{font-size:18px}h1{margin-top:28px}.lead{font-size:18px}header img{height:46px}.card h2{font-size:25px}.card__go span{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><img src="img/logo.jpg" alt="pronat" width="96" height="58"><div><b>Natalia Rożek</b><span>propozycje strony internetowej</span></div></div></header>
+<main class="wrap">
+<h1>Trzy propozycje strony pronat</h1>
+<p class="lead">Każda wersja działa na komputerze i&nbsp;na telefonie. Otwórz każdą i&nbsp;poklikaj tak, jak zrobiłby to klient.</p>
+<ul class="cards">
+<li><a class="card" href="przekroj/"><img src="img/przekroj.jpg" alt="Wersja A: rysunek domu w przekroju z instalacjami" width="720" height="450">
+<div class="card__b"><span class="card__l">A</span><h2>Przekrój domu</h2>
+<p>Rysunek domu w&nbsp;przekroju jest menu: kliknięcie instalacji otwiera opis usługi. Sześć podstron, po jednej na usługę.</p>
+<div class="card__go"><span>Zobacz wersję A&nbsp;→</span></div></div></a></li>
+<li><a class="card" href="wizytowka/"><img src="img/wizytowka.jpg" alt="Wersja B: strona z wizytówką na początku" width="720" height="450">
+<div class="card__b"><span class="card__l">B</span><h2>Wizytówka</h2>
+<p>Prosta strona z&nbsp;wizytówką na początku i&nbsp;listą usług, która rozwija się po kliknięciu. Bez podstron.</p>
+<div class="card__go"><span>Zobacz wersję B&nbsp;→</span></div></div></a></li>
+<li><a class="card" href="arkusz/"><img src="img/arkusz.jpg" alt="Wersja C: strona jak arkusz projektu z rysunkiem domu" width="720" height="450">
+<div class="card__b"><span class="card__l">C</span><h2>Arkusz z przekrojem</h2>
+<p>Strona jak arkusz projektu: rysunek domu z&nbsp;nazwami usług i&nbsp;przykładowa podstrona o&nbsp;przyłączach.</p>
+<div class="card__go"><span>Zobacz wersję C&nbsp;→</span></div></div></a></li>
+</ul>
+<div class="note">
+<p>To szkice. Teksty, rysunki i&nbsp;dane są do Twojego sprawdzenia, a&nbsp;strona nie jest jeszcze opublikowana pod adresem projektypronat.pl.</p>
+<p>Najprościej odpisz literą: która wersja i&nbsp;co w&nbsp;niej zmienić.</p>
+</div>
+</main>
+</body>
+</html>

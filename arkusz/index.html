@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arkusz z przekrojem: propozycja strony pronat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Jost:wght@500;600&amp;display=swap">
+<style>
+
+body{margin:0;background:#ffffff}
+@media (pointer:coarse){ html,body{overscroll-behavior-x:none} }
+.pn{--ink:#27282A;--ink2:#3B3E44;--cold:#01A3D4;--hot:#E33C12;--soft:#F1F5F7;--rule:#27282A;
+  --head:'Jost','Century Gothic','Avenir Next',sans-serif;--body:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+  --gx:clamp(20px,4.4vw,64px);
+  font-family:var(--body);font-size:19px;line-height:1.55;color:var(--ink);background:#ffffff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.pn *{box-sizing:border-box}
+.pn a{color:var(--ink)}
+.pn h1,.pn h2,.pn h3{text-wrap:balance}
+.wrap{max-width:1312px;margin:0 auto;padding-left:max(var(--gx),env(safe-area-inset-left,0px));padding-right:max(var(--gx),env(safe-area-inset-right,0px))}
+.pn :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.pn .btn:focus-visible{outline-color:var(--hot)}
+
+/* header: logo with her name, three places, the phone as a real button */
+.top{border-bottom:1px solid var(--rule)}
+.top__in{display:flex;align-items:center;gap:28px;min-height:84px}
+.brand{display:inline-flex;align-items:center;gap:14px;min-height:48px;text-decoration:none}
+.brand img{display:block;height:58px;width:auto}
+.brand__who{display:flex;flex-direction:column;line-height:1.25}
+.brand__who b{font-weight:600;font-size:17px}
+.brand__who span{font-size:15px;color:var(--ink2)}
+.nav{display:flex;gap:6px;margin-left:auto}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;font-size:17px;font-weight:500;text-decoration:none}
+.nav a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:var(--hot)}
+.call-s{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border:2px solid var(--ink);background:#ffffff;
+  font-weight:600;font-size:18px;text-decoration:none;box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.call-s:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.call-s small{font-size:14px;font-weight:500;color:var(--ink2)}
+.call-s,.nav a{white-space:nowrap}
+.pn .inl{padding-block:10px}
+@media (max-width:1100px){ .brand__who span{display:none} }
+@media (max-width:900px){ .nav{display:none} .call-s{margin-left:auto} }
+.call-s span:first-child{margin-right:-8px}
+@media (max-width:760px){ .call-s__n{display:none} .call-s span:first-child{margin-right:0} .call-s{font-size:19px} }
+
+/* the call: graphite button on the logo's red hard shadow; pressing slides it onto the shadow */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:58px;padding:14px 26px;border:2px solid var(--ink);
+  background:var(--ink);color:#ffffff !important;font-family:var(--body);font-weight:600;font-size:20px;line-height:1.15;text-decoration:none;
+  box-shadow:7px 7px 0 var(--hot);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(3px,3px);box-shadow:4px 4px 0 var(--hot)}
+.btn:active{transform:translate(7px,7px);box-shadow:0 0 0 var(--hot)}
+.btn small{font-size:15px;font-weight:500;padding-left:14px;border-left:1px solid rgba(255,255,255,.5)}
+
+/* a dimension line under a key phrase: thin line, end ticks (her logo is letters over a measured drawing) */
+.dim{position:relative;display:inline-block;padding-bottom:.2em}
+.dim i{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink)}
+.dim i::before,.dim i::after{content:"";position:absolute;top:-6px;width:1px;height:13px;background:var(--ink)}
+.dim i::before{left:0}.dim i::after{right:0}
+
+/* pipe samples, the drawing's legend */
+.sw{display:inline-flex;gap:4px;flex:none}
+.sw svg{display:block}
+
+
+/* the drawing (same rules as the vision 4 site) */
+.dr{--sw:1;--lw:1;font-family:var(--body);display:block;width:100%;height:auto}
+.dr .ln{fill:none;stroke:var(--ink);stroke-width:calc(var(--lw)*1.1px);stroke-linecap:butt;stroke-linejoin:round}
+.dr .ln-m{stroke-width:calc(var(--lw)*1.5px)}
+.dr .ln-t{stroke-width:calc(var(--lw)*2.4px)}
+.dr .ln-h{stroke-width:calc(var(--lw)*.8px);opacity:.75}
+.dr .dd{stroke-dasharray:22 5 3 5}
+.dr .dm,.dr .dm-e{stroke-width:calc(var(--lw)*.9px)}
+.dr .dm-e{opacity:.8}
+.dr .ah{fill:var(--ink)}
+.dr .tx{font-weight:500;font-size:19px;fill:var(--ink);paint-order:stroke;stroke:#ffffff;stroke-width:5px;stroke-linejoin:round}
+.dr .lb-s{font-size:17px}
+.dr .hf{fill:url(#hatch);stroke:none}
+.dr .hf-l{fill:url(#hatchL)}
+.dr .po,.dr .pw,.dr .pc{fill:none;stroke-linecap:butt;stroke-linejoin:round}
+.dr .po{stroke:var(--ink)}
+.dr .pw{stroke:#ffffff}
+.dr .pc.cold{stroke:var(--cold)}
+.dr .pc.hot{stroke:var(--hot)}
+.dr .pc.sew{stroke:var(--ink)}
+.dr .gl{fill:none;stroke:var(--ink);stroke-dasharray:11 7;stroke-linecap:butt;stroke-linejoin:round}
+.dr .gl-base{opacity:.28}
+.dr .rg{fill:#ffffff;stroke:var(--ink);stroke-width:calc(var(--lw)*1px)}
+.dr .vl{fill:#ffffff;stroke:var(--ink);stroke-width:calc(var(--lw)*1.3px);stroke-linejoin:round}
+.dr .vs{fill:none;stroke:var(--ink);stroke-width:calc(var(--lw)*1.3px)}
+.dr .mt{fill:#ffffff;stroke:var(--ink);stroke-width:calc(var(--lw)*1.5px)}
+.dr .pt,.dr .wwf{fill:#ffffff;stroke:none}
+.dr .wf{fill:#ffffff}
+.dr .dct{fill:none}
+.dr .air{stroke-width:calc(var(--lw)*.9px)}
+.dr .el{stroke-width:calc(var(--lw)*1.4px)}
+.dr .el-t{stroke-width:calc(var(--lw)*1.1px)}
+.dr .mfill.cold{fill:var(--cold)}
+.dr .mfill.sew,.dr .mfill.gas,.dr .mfill.elec{fill:var(--ink)}
+.dr .leads path{fill:none;stroke:var(--ink);stroke-width:1.3px}
+.dr .leads circle{fill:var(--ink)}
+.dr .chain path{fill:none;stroke:var(--ink);stroke-width:1.4px}
+.dr .chain text{font-weight:600;font-size:21px;fill:var(--ink);paint-order:stroke;stroke:#ffffff;stroke-width:6px;stroke-linejoin:round}
+.dr .note circle{fill:var(--ink)}
+.dr .note path{fill:none;stroke:var(--ink);stroke-width:1.3px}
+.dr .note text{font-weight:600;font-size:20px;fill:var(--ink);paint-order:stroke;stroke:#ffffff;stroke-width:6px;stroke-linejoin:round}
+.dr [data-part]{transition:opacity .24s cubic-bezier(.33,1,.68,1)}
+.dr[data-focus] [data-part]{opacity:.13}
+.dr[data-focus="conn"] [data-part~="conn"],.dr[data-focus="gas"] [data-part~="gas"],.dr[data-focus="water"] [data-part~="water"],
+.dr[data-focus="heat"] [data-part~="heat"],.dr[data-focus="vent"] [data-part~="vent"],.dr[data-focus="elec"] [data-part~="elec"],
+.dr[data-focus="site"] [data-part~="site"]{opacity:1}
+@media (prefers-reduced-motion:reduce){ .pn *{transition:none !important;animation:none !important} }
+
+/* tokens the shared parts need beyond .pn */
+.pn{--ink3:#5A5F66;--paper:#ffffff;--gl:max(var(--gx),env(safe-area-inset-left,0px));--gr:max(var(--gx),env(safe-area-inset-right,0px));--t-micro:160ms;--ease-out:cubic-bezier(.33,1,.68,1)}
+/* ---------- pipe run: the steps sit on one pipe, each on a fitting from the drawing (copied into the other visions' boards) ---------- */
+/* Round 5: the pipe is one segment from each fitting to the next (none after the last), so it never runs on past the
+   last step into empty space („się urywa”); when it comes into view (reveal.js adds .in) the water runs segment by segment
+   and each fitting pops in as the water reaches it. Without the script everything is drawn and full. */
+.run{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px;max-width:1200px;margin:36px auto 0;padding:0;list-style:none;text-align:center}
+.run li{position:relative;display:flex;flex-direction:column;align-items:center;min-width:0}
+.run li:not(:last-child)::before,.run li:not(:last-child)::after{content:"";position:absolute;left:50%;width:calc(100% + 28px)}
+.run li:not(:last-child)::before{top:16px;height:12px;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);background:#fff}
+.run li:not(:last-child)::after{top:20px;height:4px;background:var(--cold);transform-origin:0 50%}
+.run__fit{position:relative;z-index:1;display:block;width:44px;height:44px;overflow:visible}
+.run__fit path,.run__fit rect,.run__fit circle{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round}
+.run__fit .f-b{fill:#fff}
+.run h3{margin:16px 0 0;font-size:20px;font-weight:600;line-height:1.3}
+.run p{margin:6px 0 0;max-width:19em;font-size:17px;line-height:1.45;color:var(--ink2)}
+.run--who li > p:not(.run__who){margin-bottom:12px}
+.run .run__who{margin-top:auto;padding:3px 12px;border:1px solid var(--ink);border-radius:14px;font-size:15px;font-weight:600;color:var(--ink)}   /* who does it: one line for all four */
+.js .run li::after{transition:transform .5s linear}
+.js .run:not(.in) li::after{transform:scaleX(0)}
+.js .run.in li:nth-child(1)::after{transition-delay:.2s}
+.js .run.in li:nth-child(2)::after{transition-delay:.75s}
+.js .run.in li:nth-child(3)::after{transition-delay:1.3s}
+.js .run .run__fit{transition:opacity .2s linear,scale .4s cubic-bezier(.34,1.56,.64,1)}
+.js .run:not(.in) .run__fit{opacity:0;scale:.5}
+.js .run.in li:nth-child(2) .run__fit{transition-delay:.7s}
+.js .run.in li:nth-child(3) .run__fit{transition-delay:1.25s}
+.js .run.in li:nth-child(4) .run__fit{transition-delay:1.8s}
+@media (max-width:860px){
+  .run{grid-template-columns:1fr;gap:16px;max-width:520px;margin-top:24px;text-align:left}
+  .run li{display:grid;grid-template-columns:40px minmax(0,1fr) auto;column-gap:14px;align-items:start}
+  .run li:not(:last-child)::before,.run li:not(:last-child)::after{left:14px;top:20px;width:12px;height:calc(100% + 16px)}
+  .run li:not(:last-child)::before{border:0;border-left:2px solid var(--ink);border-right:2px solid var(--ink)}
+  .run li:not(:last-child)::after{left:18px;width:4px;transform-origin:50% 0}
+  .js .run:not(.in) li::after{transform:scaleY(0)}
+  .run__fit{grid-column:1;grid-row:1 / span 2;width:40px;height:40px;transform:rotate(90deg)}
+  .run li:last-child .run__fit{transform:none}
+  .run h3{grid-column:2 / span 2;margin:8px 0 0;font-size:18px}
+  .run--who h3{grid-column:2}
+  .run li > p{grid-column:2 / span 2;margin:2px 0 0;max-width:none;font-size:16px}
+  .run--who li > p:not(.run__who){margin-bottom:0}
+  .run .run__who{grid-column:3;grid-row:1;align-self:start;margin:7px 0 0;white-space:nowrap;font-size:14px}
+}
+
+/* ---------- groups that rise in one after another as they come into view (data-rv, reveal.js) ---------- */
+.js [data-rv] > *{transition:opacity .45s var(--ease-out),translate .6s var(--ease-out)}
+.js [data-rv]:not(.in) > *{opacity:0;translate:0 18px}
+.js [data-rv].in > :nth-child(2){transition-delay:.07s}
+.js [data-rv].in > :nth-child(3){transition-delay:.14s}
+.js [data-rv].in > :nth-child(4){transition-delay:.21s}
+.js [data-rv].in > :nth-child(5){transition-delay:.28s}
+.js [data-rv].in > :nth-child(6){transition-delay:.35s}
+
+/* ---------- footer banner: her logo, its drawing carried out to both edges, the number once (copied into the other visions' boards) ---------- */
+.fb{position:relative;overflow:hidden;padding-block:52px calc(24px + env(safe-area-inset-bottom,0px));padding-left:var(--gl);padding-right:var(--gr);border-top:2px solid var(--ink);background:var(--paper)}
+.fb__row{--L:200px;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);column-gap:44px;max-width:1320px;margin:0 auto}
+.fb__logo{width:calc(var(--L) * 1.5923);height:var(--L)}
+.fb__draw{display:block;width:100%;height:100%;overflow:visible}
+.fb__ln{fill:none;stroke:var(--ink);stroke-width:3}
+.fb__ht{stroke-width:2.6}
+.fb__col rect{fill:#fff;stroke:var(--ink);stroke-width:3}
+.fb__who,.fb__call{height:calc(var(--L) * .72);display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:4px;min-width:0}
+.fb__who{align-items:flex-end;text-align:right}
+.fb__who h2{margin:0;font-family:var(--head);font-weight:500;font-size:32px;line-height:1.1}
+.fb__who p{margin:6px 0 0;color:var(--ink2);font-size:17px;line-height:1.4}
+.fb .bignum{align-self:flex-start;display:inline-block;font-family:var(--head);font-weight:600;font-size:clamp(44px,4.6vw,66px);line-height:1;letter-spacing:.01em;white-space:nowrap;
+  color:var(--hot);text-decoration:none;text-shadow:.055em .045em 0 var(--ink)}
+.fb__call p{margin:12px 0 0;color:var(--ink2);font-size:17px;line-height:1.4}
+.fb__sms{color:var(--ink);font-weight:600;text-decoration-thickness:2px;text-underline-offset:.2em;padding-block:12px}
+.fb__fine{margin:30px 0 0;text-align:center;font-size:15px;color:var(--ink3)}
+@media (max-width:999px){
+  .fb{padding-block:30px calc(20px + env(safe-area-inset-bottom,0px))}
+  .fb__row{--L:132px;grid-template-columns:1fr;justify-items:center;row-gap:14px;text-align:center}
+  .fb__logo{order:-1}
+  .fb__who,.fb__call{height:auto;align-items:center;text-align:center;padding:0}
+  .fb__who h2{font-size:28px}
+  .fb .bignum{align-self:center;font-size:46px}
+  .fb__fine{margin-top:22px}
+}
+
+
+/* service pictograms: the fixtures of the drawing, small */
+.pic{display:block;flex:none;width:88px;height:56px;overflow:visible}
+.pic path,.pic rect,.pic circle{fill:none;stroke:var(--ink);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.pic .w{fill:#ffffff}
+.pic .ko{fill:#ffffff;stroke:none}
+.pic .t{stroke-width:1.3}
+.pic .k{fill:var(--cold);stroke:none}
+.pic .c{stroke:var(--cold);stroke-width:3.6;stroke-linecap:butt}
+.pic .h{stroke:var(--hot);stroke-width:3.6;stroke-linecap:butt}
+.pic .s{stroke-width:4;stroke-linecap:butt}
+.pic .g{stroke-dasharray:6 4;stroke-linecap:butt;stroke-width:2.2}
+
+.hero{padding-block:44px 56px}
+.hero__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px 56px;align-items:center}
+.hero h1{margin:0;font-family:var(--head);font-weight:500;font-size:clamp(40px,4.4vw,64px);line-height:1.04;letter-spacing:-.015em}
+.lead{margin:22px 0 0;font-size:20px;line-height:1.55;color:var(--ink2);max-width:30em}
+.cta{margin-top:28px}
+.hfig{margin:0}
+.hfig__pic{position:relative}
+.lab{position:absolute;transform:translateY(-50%);display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:6px 12px;border:2px solid var(--ink);
+  background:#ffffff;box-shadow:3px 3px 0 var(--ink);font-weight:600;font-size:16px;line-height:1.15;text-decoration:none;color:var(--ink);
+  transition:transform .15s,box-shadow .15s,background-color .15s}
+.lab span{font-size:18px}
+.lab:hover,.lab:focus-visible{transform:translate(2px,calc(-50% + 2px));box-shadow:1px 1px 0 var(--ink);background:var(--ink);color:#ffffff}
+.hfig:has(.lab:hover) .dr [data-part],.hfig:has(.lab:focus-visible) .dr [data-part]{opacity:.13}
+.hfig:has(.lab[data-p="heat"]:hover) .dr [data-part~="heat"],.hfig:has(.lab[data-p="heat"]:focus-visible) .dr [data-part~="heat"]{opacity:1}.hfig:has(.lab[data-p="gas"]:hover) .dr [data-part~="gas"],.hfig:has(.lab[data-p="gas"]:focus-visible) .dr [data-part~="gas"]{opacity:1}.hfig:has(.lab[data-p="conn"]:hover) .dr [data-part~="conn"],.hfig:has(.lab[data-p="conn"]:focus-visible) .dr [data-part~="conn"]{opacity:1}.hfig:has(.lab[data-p="vent"]:hover) .dr [data-part~="vent"],.hfig:has(.lab[data-p="vent"]:focus-visible) .dr [data-part~="vent"]{opacity:1}.hfig:has(.lab[data-p="water"]:hover) .dr [data-part~="water"],.hfig:has(.lab[data-p="water"]:focus-visible) .dr [data-part~="water"]{opacity:1}.hfig:has(.lab[data-p="site"]:hover) .dr [data-part~="site"],.hfig:has(.lab[data-p="site"]:focus-visible) .dr [data-part~="site"]{opacity:1}
+.hfig figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:12px;font-size:15px;color:var(--ink2)}
+.hfig figcaption .sw{margin-left:8px}
+.hfig figcaption .sw:first-child{margin-left:0}
+
+.svc{border-top:1px solid var(--rule);padding-block:56px 64px}
+.svc__grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:24px 56px}
+.svc h2,.how h2,.who h2{margin:0;font-family:var(--head);font-weight:500;font-size:clamp(30px,2.7vw,40px);line-height:1.1}
+.svc__head p{margin:14px 0 0;font-size:17px;color:var(--ink2);max-width:22em}
+.rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px;margin:0;padding:0;list-style:none}
+.row{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:start;gap:14px;min-height:96px;padding:18px 4px 18px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.row .pic{margin-top:0}
+.row__t{display:flex;flex-direction:column;gap:4px}
+.row__t b{font-weight:600;font-size:20px;line-height:1.3}
+.row__t span{font-size:17px;line-height:1.45;color:var(--ink2)}
+.row__go{font-size:24px;line-height:1.2;color:var(--hot)}
+.partner{margin:22px 0 0;font-size:17px;color:var(--ink2)}
+.partner .inl{padding-block:12px}             /* the partner once, under the services (the person is in the footer banner) */
+.row{transition:background-color .2s cubic-bezier(.33,1,.68,1)}
+.row .pic,.row__go{transition:translate .25s cubic-bezier(.33,1,.68,1)}
+@media (hover:hover) and (pointer:fine){
+  .row--go:hover{background:var(--soft)}
+  .row--go:hover .pic{translate:4px 0}
+  .row--go:hover .row__go{translate:5px 0}
+  .row--go:hover b{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;text-decoration-color:var(--hot)}
+}
+
+.how{background:var(--soft);padding-block:56px 64px;text-align:center}
+.how__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px 64px}
+.seq{margin:22px 0 0;padding:0;list-style:none;counter-reset:s}
+.seq li{position:relative;counter-increment:s;padding:0 0 22px 56px;font-size:19px}
+.seq li::before{content:counter(s);position:absolute;left:0;top:-3px;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ink);color:#ffffff;font-weight:600;font-size:17px}
+.seq li::after{content:"";position:absolute;left:18px;top:38px;bottom:2px;width:2px;background:var(--ink)}
+.seq li:last-child::after{display:none}
+.faq__h{font-size:24px !important;font-family:var(--body) !important;font-weight:600 !important;margin:0 0 6px !important}
+.faq{display:grid;grid-template-columns:minmax(0,1fr);align-content:start}
+.qa{padding:6px 0 12px;border-bottom:1px solid var(--rule)}
+.qa summary{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px;cursor:pointer;list-style:none}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";flex:none;display:grid;place-items:center;width:30px;height:30px;border:2px solid var(--ink);font-size:20px;line-height:1;font-weight:500}
+.qa[open] summary::after{content:"−"}
+.qa h3{margin:0;font-size:19px;font-weight:600}
+.qa p{margin:2px 0 0;color:var(--ink2);font-size:18px;max-width:34em}
+
+.who{padding-block:56px 60px}
+.who__grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:32px 64px;align-items:center}
+.who__txt p{margin:14px 0 0;max-width:32em}
+.bignum{display:inline-block;font-family:var(--head);font-weight:600;font-size:clamp(44px,5.2vw,76px);line-height:1;letter-spacing:.01em;color:var(--hot) !important;
+  text-decoration:none;text-shadow:.055em .045em 0 var(--ink)}
+.who__call p{margin:16px 0 0;color:var(--ink2)}
+.who__act{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;margin-top:22px}
+.sms{display:inline-flex;align-items:center;min-height:48px;font-weight:600;text-decoration-thickness:2px;text-underline-offset:5px}
+
+@media (max-width:1100px){
+  .hero__grid{grid-template-columns:minmax(0,1fr)}
+  .svc__grid,.how__grid,.who__grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .pn{font-size:18px}
+  .top__in{min-height:68px;gap:12px}
+  .brand img{height:46px}
+  .brand__who span{display:none}
+  .nav{display:none}
+  .call-s{margin-left:auto;background:var(--ink);color:#ffffff !important;box-shadow:3px 3px 0 var(--hot);padding:0 16px}
+  .hero{padding-block:26px 40px}
+  .hero h1{font-size:36px}
+  .lead{font-size:18px;margin-top:16px}
+  .btn{width:100%;flex-direction:column;gap:2px}
+  .btn small{padding:0;border:0}
+  .lab,.dr .leads,.hfig .dr .tx{display:none}       /* phone: the drawing without names (they were cut at the edge) */
+  .hfig figcaption{font-size:14px}
+  .svc,.how,.who{padding-block:40px 44px}
+  .rows{grid-template-columns:minmax(0,1fr)}
+  .row{min-height:0;padding:14px 0;align-items:center}
+  .row .pic{width:72px;height:46px}
+  .row__t b{font-size:19px}
+  .row__t span{display:none}
+  .seq li{padding-left:52px;font-size:18px}
+  .bignum{font-size:44px}
+  .who__act .btn{width:100%}
+}
+
+</style>
+</head>
+<body>
+
+<div class="pn">
+<header class="top"><div class="wrap top__in">
+<a class="brand" href="index.html" aria-label="pronat, strona główna"><img src="img/logo.jpg" alt="" width="96" height="58"><span class="brand__who"><b>Natalia Rożek</b><span>projektantka instalacji sanitarnych</span></span></a>
+<nav class="nav" aria-label="Strona"><a href="#uslugi">Usługi</a><a href="#jak">Jak zacząć</a><a href="#kontakt">Kontakt</a></nav>
+<a class="call-s" href="tel:+48508160653"><span>Zadzwoń</span><span class="call-s__n">: 508 160 653</span></a>
+</div></header>
+<main>
+<section class="hero" aria-labelledby="h1"><div class="wrap hero__grid">
+<div class="hero__txt">
+<h1 id="h1">Projekt instalacji i&nbsp;nadzór <span class="dim">u&nbsp;jednej osoby<i aria-hidden="true"></i></span></h1>
+<p class="lead">Projektuję instalacje sanitarne do domów: wodę i&nbsp;kanalizację, ogrzewanie, gaz, wentylację i&nbsp;przyłącza. Projekty robię dla całej Polski, a&nbsp;na Śląsku prowadzę też nadzór i&nbsp;kieruję budową.</p>
+<div class="cta"><a class="btn" href="tel:+48508160653">Zadzwoń: 508 160 653</a></div>
+</div>
+<figure class="hfig">
+<div class="hfig__pic"><svg class="dom dr" id="dh" viewBox="640 40 1060 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Przekrój domu z instalacjami" preserveAspectRatio="xMidYMid meet">
+<defs>
+<pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V7" stroke="#27282A" stroke-width=".9" opacity=".5"></path></pattern>
+<pattern id="hatchL" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V6" stroke="#27282A" stroke-width=".7" opacity=".32"></path></pattern>
+<mask id="gm1a" maskUnits="userSpaceOnUse" x="-400" y="-100" width="2400" height="1100"><path class="gmask" d="M309.5 616 L441 616 Q446 616 446 611 L446 528" data-p="g0" data-sys="gas" data-part="gas" data-len="224.5" data-m="ink" fill="none" stroke="#fff" stroke-width="14"></path></mask><mask id="gm1b" maskUnits="userSpaceOnUse" x="-400" y="-100" width="2400" height="1100"><path class="gmask" d="M309.5 616 L441 616 Q446 616 446 611 L446 528" data-p="g0" data-sys="gas" data-part="gas" data-len="224.5" data-m="fill" fill="none" stroke="#fff" stroke-width="14"></path></mask><mask id="gm2a" maskUnits="userSpaceOnUse" x="-400" y="-100" width="2400" height="1100"><path class="gmask" d="M466 528 L466 611 Q466 616 471 616 L1033 616 Q1038 616 1038 621 L1038 646" data-p="g1" data-sys="gas" data-part="gas" data-after="g0" data-at="224.5" data-len="690" data-m="ink" fill="none" stroke="#fff" stroke-width="14"></path></mask><mask id="gm2b" maskUnits="userSpaceOnUse" x="-400" y="-100" width="2400" height="1100"><path class="gmask" d="M466 528 L466 611 Q466 616 471 616 L1033 616 Q1038 616 1038 621 L1038 646" data-p="g1" data-sys="gas" data-part="gas" data-after="g0" data-at="224.5" data-len="690" data-m="fill" fill="none" stroke="#fff" stroke-width="14"></path></mask></defs>
+<g class="sheet">
+<g class="hf-g" data-l="hatch-fill"><path class="hf" d="M800 208L824 208L824 744L836 744L836 758L788 758L788 744L800 744Z"></path><path class="hf" d="M1416 208L1440 208L1440 744L1452 744L1452 758L1404 758L1404 744L1416 744Z"></path><path class="hf" d="M770 204.625L1120 69L1470 204.625L1470 219.625L1120 84L770 219.625Z"></path><path class="hf" d="M824 722H1416V744H824Z"></path><path class="hf" d="M824 540H1416V562H824Z"></path><path class="hf" d="M824 374H1416V396H824Z"></path><path class="hf" d="M824 208H1416V230H824Z"></path><path class="hf hf-l" d="M980 396H992V540H980Z"></path><path class="hf hf-l" d="M980 230H992V374H980Z"></path></g>
+<g class="" data-l="ground"><path class="ln ln-t" d="M-260 560H94M126 560H800"></path><path class="ln ln-t" d="M1440 560H1860"></path><path class="ln ln-m" d="M-260 578H94M126 578H330"></path><path class="ln ln-m" d="M330 553H346V578"></path><path class="ln ln-m" d="M346 560V553"></path><path class="ln dd" d="M392 560V452"></path><path class="ln ln-m" d="M386 560V490H392V560"></path></g>
+<g class="" data-l="hatch"><path class="ln ln-h" d="M360 562L330 592M372 562L342 592M384 562L354 592M396 562L366 592M408 562L378 592M420 562L390 592M432 562L402 592M444 562L414 592M456 562L426 592M468 562L438 592M480 562L450 592M492 562L462 592M504 562L474 592M516 562L486 592M528 562L498 592M540 562L510 592M552 562L522 592M564 562L534 592M576 562L546 592M588 562L558 592M600 562L570 592M612 562L582 592M624 562L594 592M636 562L606 592M648 562L618 592M660 562L630 592M672 562L642 592M684 562L654 592M696 562L666 592M708 562L678 592M720 562L690 592M732 562L702 592M744 562L714 592M756 562L726 592M768 562L738 592M780 562L750 592M792 562L762 592M804 562L774 592M1458 562L1428 592M1470 562L1440 592M1482 562L1452 592M1494 562L1464 592M1506 562L1476 592M1518 562L1488 592M1530 562L1500 592M1542 562L1512 592M1554 562L1524 592M1566 562L1536 592M1578 562L1548 592M1590 562L1560 592M1602 562L1572 592M1614 562L1584 592M1626 562L1596 592M1638 562L1608 592M1650 562L1620 592M1662 562L1632 592M1674 562L1644 592M1686 562L1656 592M1698 562L1668 592M1710 562L1680 592M1722 562L1692 592M1734 562L1704 592M1746 562L1716 592M1758 562L1728 592M1770 562L1740 592M1782 562L1752 592M1794 562L1764 592M1806 562L1776 592M1818 562L1788 592M1830 562L1800 592M1842 562L1812 592M1854 562L1824 592M1866 562L1836 592M1878 562L1848 592"></path><path class="ln ln-h" d="M-250 580L-262 592M-236 580L-248 592M-222 580L-234 592M-208 580L-220 592M-194 580L-206 592M-180 580L-192 592M-166 580L-178 592M-152 580L-164 592M-138 580L-150 592M-124 580L-136 592M-110 580L-122 592M-96 580L-108 592M-82 580L-94 592M-68 580L-80 592M-54 580L-66 592M-40 580L-52 592M-26 580L-38 592M-12 580L-24 592M2 580L-10 592M16 580L4 592M30 580L18 592M44 580L32 592M58 580L46 592M72 580L60 592M86 580L74 592M100 580L88 592M114 580L102 592M128 580L116 592M142 580L130 592M156 580L144 592M170 580L158 592M184 580L172 592M198 580L186 592M212 580L200 592M226 580L214 592M240 580L228 592M254 580L242 592M268 580L256 592M282 580L270 592M296 580L284 592M310 580L298 592M324 580L312 592"></path></g>
+<g class="" data-l="struct"><path class="ln ln-t" d="M800 208L824 208L824 744L836 744L836 758L788 758L788 744L800 744Z"></path><path class="ln ln-t" d="M1416 208L1440 208L1440 744L1452 744L1452 758L1404 758L1404 744L1416 744Z"></path></g><g class="" data-l="struct2"><path class="ln ln-t" d="M824 722H1416M824 744H1416"></path><path class="ln ln-t" d="M824 540H1416M824 562H1416"></path><path class="ln ln-t" d="M824 374H1416M824 396H1416"></path><path class="ln ln-t" d="M824 208H1416M824 230H1416"></path></g><g class="" data-l="struct3"><path class="ln ln-t" d="M770 204.625L1120 69L1470 204.625L1470 219.625L1120 84L770 219.625Z"></path><path class="ln ln-m" d="M980 396H992V540H980Z"></path><path class="ln ln-m" d="M980 230H992V374H980Z"></path></g><g class="" data-l="win-w"><rect class="wwf" x="798.6" y="428" width="26.8" height="48"></rect><rect class="wwf" x="798.6" y="266" width="26.8" height="46"></rect><rect class="wwf" x="1414.6" y="428" width="26.8" height="48"></rect><rect class="wwf" x="1414.6" y="266" width="26.8" height="46"></rect></g><g class="" data-l="win"><path class="ln ln-t" d="M800 428H824M800 476H824"></path><path class="ln" d="M808 428V476M812 428V476M816 428V476"></path><path class="ln ln-t" d="M800 266H824M800 312H824"></path><path class="ln" d="M808 266V312M812 266V312M816 266V312"></path><path class="ln ln-t" d="M1416 428H1440M1416 476H1440"></path><path class="ln" d="M1424 428V476M1428 428V476M1432 428V476"></path><path class="ln ln-t" d="M1416 266H1440M1416 312H1440"></path><path class="ln" d="M1424 266V312M1428 266V312M1432 266V312"></path></g>
+<g class="" data-l="mains"><g class="mn" data-sys="sew" data-part="conn"><path class="ln ln-t" d="M84 796a26 26 0 1 0 52 0a26 26 0 1 0 -52 0"></path><circle class="mfill sew" cx="110" cy="796" r="21"></circle></g><g class="mn" data-sys="cold" data-part="conn"><path class="ln ln-t" d="M215 664a15 15 0 1 0 30 0a15 15 0 1 0 -30 0"></path><circle class="mfill cold" cx="230" cy="664" r="10.6"></circle></g><g class="mn" data-sys="gas" data-part="gas"><path class="ln ln-t" d="M290.5 616a9.5 9.5 0 1 0 19 0a9.5 9.5 0 1 0 -19 0"></path><circle class="mfill gas" cx="300" cy="616" r="3.4"></circle></g><g class="mn" data-sys="elec" data-part="elec"><path class="ln ln-m" d="M363.4 598a4.6 4.6 0 1 0 9.2 0a4.6 4.6 0 1 0 -9.2 0"></path><circle class="mfill elec" cx="368" cy="598" r="2.2"></circle></g><g data-part="conn"><path class="ln ln-m" d="M94 560V772M126 560V772"></path><path class="ln ln-m" d="M90 555H130V560H90Z"></path><path class="ln" d="M104 584H116M104 606H116M104 628H116M104 650H116M104 672H116M104 694H116M104 716H116M104 738H116M104 760H116"></path></g></g>
+<g class="" data-l="elec"><g data-part="elec" data-sys="elec"><path class="ln ln-m el" d="M372.6 598L406 598L406 560"></path></g><g data-part="elec" data-sys="elec"><path class="ln ln-m el" d="M420 560L420 598L844 598L844 514"></path></g><g data-part="elec" data-sys="elec"><path class="ln el-t" d="M522 603L528 593M527 603L533 593M532 603L538 593M652 603L658 593M657 603L663 593M662 603L668 593M752 603L758 593M757 603L763 593M762 603L768 593"></path></g><rect class="pt" x="441.8" y="594.6" width="8.4" height="6.8"></rect><rect class="pt" x="461.8" y="594.6" width="8.4" height="6.8"></rect></g>
+<g class="pipes"><g class="zg" data-z="0"><g class="po-g" data-l="ink"><path class="po" d="M1066 374 L1066 380 Q1066 386 1072 386 L1402 386" data-p="sff" data-sys="sew" data-part="water" data-len="348" style="stroke-width:calc(var(--sw,1)*8.5px)"></path><path class="po" d="M1216 374 L1216 386" data-p="sbath" data-sys="sew" data-part="water" data-after="sff" data-at="162" data-len="12" style="stroke-width:calc(var(--sw,1)*8.5px)"></path><path class="po" d="M1402 386 L1402 770" data-p="sst" data-sys="sew" data-part="water" data-after="sff" data-at="348" data-len="384" style="stroke-width:calc(var(--sw,1)*8.5px)"></path><path class="po" d="M1066 540 L1066 545.5 Q1066 551 1071.5 551 L1402 551" data-p="sgf" data-sys="sew" data-part="water" data-after="sst" data-at="154" data-len="347" style="stroke-width:calc(var(--sw,1)*8.5px)"></path><path class="po" d="M1208 540 L1208 551" data-p="sgs" data-sys="sew" data-part="water" data-after="sgf" data-at="153" data-len="11" style="stroke-width:calc(var(--sw,1)*8.5px)"></path><path class="po" d="M1402 770 L136 796" data-p="scol" data-sys="sew" data-part="conn" data-after="sst" data-at="384" data-len="1266.3" style="stroke-width:calc(var(--sw,1)*11px)"></path><path class="po" d="M1402 386 L1402 140" data-p="svent" data-sys="sew" data-part="water" data-len="246" style="stroke-width:calc(var(--sw,1)*8.5px)"></path></g><g class="pw-g" data-l="ink"><path class="pw" d="M1066 374 L1066 380 Q1066 386 1072 386 L1402 386" data-p="sff" data-sys="sew" data-part="water" data-len="348" style="stroke-width:calc(var(--sw,1)*6.6px)"></path><path class="pw" d="M1216 374 L1216 386" data-p="sbath" data-sys="sew" data-part="water" data-after="sff" data-at="162" data-len="12" style="stroke-width:calc(var(--sw,1)*6.6px)"></path><path class="pw" d="M1402 386 L1402 770" data-p="sst" data-sys="sew" data-part="water" data-after="sff" data-at="348" data-len="384" style="stroke-width:calc(var(--sw,1)*6.6px)"></path><path class="pw" d="M1066 540 L1066 545.5 Q1066 551 1071.5 551 L1402 551" data-p="sgf" data-sys="sew" data-part="water" data-after="sst" data-at="154" data-len="347" style="stroke-width:calc(var(--sw,1)*6.6px)"></path><path class="pw" d="M1208 540 L1208 551" data-p="sgs" data-sys="sew" data-part="water" data-after="sgf" data-at="153" data-len="11" style="stroke-width:calc(var(--sw,1)*6.6px)"></path><path class="pw" d="M1402 770 L136 796" data-p="scol" data-sys="sew" data-part="conn" data-after="sst" data-at="384" data-len="1266.3" style="stroke-width:calc(var(--sw,1)*8.8px)"></path><path class="pw" d="M1402 386 L1402 140" data-p="svent" data-sys="sew" data-part="water" data-len="246" style="stroke-width:calc(var(--sw,1)*6.6px)"></path></g><g class="pc-g" data-l="core"><path class="pc sew" d="M1066 374 L1066 380 Q1066 386 1072 386 L1402 386" data-p="sff" data-sys="sew" data-part="water" data-len="348" style="stroke-width:calc(var(--sw,1)*4.6px)"></path><path class="pc sew" d="M1216 374 L1216 386" data-p="sbath" data-sys="sew" data-part="water" data-after="sff" data-at="162" data-len="12" style="stroke-width:calc(var(--sw,1)*4.6px)"></path><path class="pc sew" d="M1402 386 L1402 770" data-p="sst" data-sys="sew" data-part="water" data-after="sff" data-at="348" data-len="384" style="stroke-width:calc(var(--sw,1)*4.6px)"></path><path class="pc sew" d="M1066 540 L1066 545.5 Q1066 551 1071.5 551 L1402 551" data-p="sgf" data-sys="sew" data-part="water" data-after="sst" data-at="154" data-len="347" style="stroke-width:calc(var(--sw,1)*4.6px)"></path><path class="pc sew" d="M1208 540 L1208 551" data-p="sgs" data-sys="sew" data-part="water" data-after="sgf" data-at="153" data-len="11" style="stroke-width:calc(var(--sw,1)*4.6px)"></path><path class="pc sew" d="M1402 770 L136 796" data-p="scol" data-sys="sew" data-part="conn" data-after="sst" data-at="384" data-len="1266.3" style="stroke-width:calc(var(--sw,1)*6.4px)"></path></g></g><rect class="pt" x="1372.6" y="381" width="14.9" height="10.1"></rect><rect class="pt" x="1372.6" y="546" width="14.9" height="10.1"></rect><g class="zg" data-z="0.5"><g class="po-g" data-l="ink"></g><g class="pw-g" data-l="ink"></g><g class="pc-g" data-l="core"></g></g><g class="gas-g" data-sys="gas"><path class="gl gl-base" d="M309.5 616 L441 616 Q446 616 446 611 L446 528" mask="url(#gm1a)" style="stroke-width:calc(var(--sw-g,var(--sw,1))*2.6px)"></path><path class="gl gl-full" d="M309.5 616 L441 616 Q446 616 446 611 L446 528" mask="url(#gm1b)" style="stroke-width:calc(var(--sw-g,var(--sw,1))*2.6px)"></path><path class="gl gl-base" d="M466 528 L466 611 Q466 616 471 616 L1033 616 Q1038 616 1038 621 L1038 646" mask="url(#gm2a)" style="stroke-width:calc(var(--sw-g,var(--sw,1))*2.6px)"></path><path class="gl gl-full" d="M466 528 L466 611 Q466 616 471 616 L1033 616 Q1038 616 1038 621 L1038 646" mask="url(#gm2b)" style="stroke-width:calc(var(--sw-g,var(--sw,1))*2.6px)"></path></g><rect class="pt" x="996.6" y="613.9" width="14.9" height="4.2"></rect><g class="zg" data-z="1"><g class="po-g" data-l="ink"><path class="po" d="M245 664 L830 664" data-p="c0" data-sys="cold" data-part="conn" data-len="585" style="stroke-width:calc(var(--sw,1)*10.5px)"></path><path class="po" d="M830 664 L1004 664" data-p="c1" data-sys="cold" data-part="conn" data-after="c0" data-at="585" data-len="174" style="stroke-width:calc(var(--sw,1)*9.5px)"></path><path class="po" d="M944 664 L944 698.2 Q944 704 949.8 704 L1030 704" data-p="cb" data-sys="cold" data-part="water" data-after="c1" data-at="114" data-len="126" style="stroke-width:calc(var(--sw,1)*6.8px)"></path><path class="po" d="M1004 664 L1004 303.2 Q1004 296 1011.2 296 L1284 296" data-p="cr" data-sys="cold" data-part="water" data-after="c1" data-at="174" data-len="648" style="stroke-width:calc(var(--sw,1)*8.5px)"></path><path class="po" d="M1004 500 L1080 500" data-p="cs1" data-sys="cold" data-part="water" data-after="cr" data-at="164" data-len="76" style="stroke-width:calc(var(--sw,1)*6.8px)"></path><path class="po" d="M1004 470 L1228 470" data-p="cs2" data-sys="cold" data-part="water" data-after="cr" data-at="194" data-len="224" style="stroke-width:calc(var(--sw,1)*6.8px)"></path><path class="po" d="M1004 340 L1080 340" data-p="cs3" data-sys="cold" data-part="water" data-after="cr" data-at="324" data-len="76" style="stroke-width:calc(var(--sw,1)*6.8px)"></path></g><g class="pw-g" data-l="ink"><path class="pw" d="M245 664 L830 664" data-p="c0" data-sys="cold" data-part="conn" data-len="585" style="stroke-width:calc(var(--sw,1)*8.4px)"></path><path class="pw" d="M830 664 L1004 664" data-p="c1" data-sys="cold" data-part="conn" data-after="c0" data-at="585" data-len="174" style="stroke-width:calc(var(--sw,1)*7.5px)"></path><path class="pw" d="M944 664 L944 698.2 Q944 704 949.8 704 L1030 704" data-p="cb" data-sys="cold" data-part="water" data-after="c1" data-at="114" data-len="126" style="stroke-width:calc(var(--sw,1)*5px)"></path><path class="pw" d="M1004 664 L1004 303.2 Q1004 296 1011.2 296 L1284 296" data-p="cr" data-sys="cold" data-part="water" data-after="c1" data-at="174" data-len="648" style="stroke-width:calc(var(--sw,1)*6.6px)"></path><path class="pw" d="M1004 500 L1080 500" data-p="cs1" data-sys="cold" data-part="water" data-after="cr" data-at="164" data-len="76" style="stroke-width:calc(var(--sw,1)*5px)"></path><path class="pw" d="M1004 470 L1228 470" data-p="cs2" data-sys="cold" data-part="water" data-after="cr" data-at="194" data-len="224" style="stroke-width:calc(var(--sw,1)*5px)"></path><path class="pw" d="M1004 340 L1080 340" data-p="cs3" data-sys="cold" data-part="water" data-after="cr" data-at="324" data-len="76" style="stroke-width:calc(var(--sw,1)*5px)"></path></g><g class="pc-g" data-l="core"><path class="pc cold" d="M245 664 L830 664" data-p="c0" data-sys="cold" data-part="conn" data-len="585" style="stroke-width:calc(var(--sw,1)*5.6px)"></path><path class="pc cold" d="M830 664 L1004 664" data-p="c1" data-sys="cold" data-part="conn" data-after="c0" data-at="585" data-len="174" style="stroke-width:calc(var(--sw,1)*5px)"></path><path class="pc cold" d="M944 664 L944 698.2 Q944 704 949.8 704 L1030 704" data-p="cb" data-sys="cold" data-part="water" data-after="c1" data-at="114" data-len="126" style="stroke-width:calc(var(--sw,1)*3.2px)"></path><path class="pc cold" d="M1004 664 L1004 303.2 Q1004 296 1011.2 296 L1284 296" data-p="cr" data-sys="cold" data-part="water" data-after="c1" data-at="174" data-len="648" style="stroke-width:calc(var(--sw,1)*4.4px)"></path><path class="pc cold" d="M1004 500 L1080 500" data-p="cs1" data-sys="cold" data-part="water" data-after="cr" data-at="164" data-len="76" style="stroke-width:calc(var(--sw,1)*3.2px)"></path><path class="pc cold" d="M1004 470 L1228 470" data-p="cs2" data-sys="cold" data-part="water" data-after="cr" data-at="194" data-len="224" style="stroke-width:calc(var(--sw,1)*3.2px)"></path><path class="pc cold" d="M1004 340 L1080 340" data-p="cs3" data-sys="cold" data-part="water" data-after="cr" data-at="324" data-len="76" style="stroke-width:calc(var(--sw,1)*3.2px)"></path></g></g><rect class="pt" x="999" y="572.6" width="10.1" height="14.9"></rect><rect class="pt" x="999" y="586.6" width="10.1" height="14.9"></rect><g class="zg" data-z="2"><g class="po-g" data-l="ink"><path class="po" d="M1088 646 L1088 619.2 Q1088 612 1095.2 612 L1372.8 612 Q1380 612 1380 604.8 L1380 303.2 Q1380 296 1372.8 296 L1297 296" data-p="h1" data-sys="hot" data-part="water" data-len="725" style="stroke-width:calc(var(--sw,1)*8.5px)"></path><path class="po" d="M1380 470 L1243 470" data-p="hs" data-sys="hot" data-part="water" data-after="h1" data-at="468" data-len="137" style="stroke-width:calc(var(--sw,1)*6.8px)"></path><path class="po" d="M1072 646 L1072 587.2 Q1072 580 1064.8 580 L959.2 580 Q952 580 952 572.8 L952 335.2 Q952 328 944.8 328 L918 328" data-p="hsup" data-sys="hot" data-part="heat" data-len="472" style="stroke-width:calc(var(--sw,1)*8.5px)"></path><path class="po" d="M952 494 L918 494" data-p="hsg" data-sys="hot" data-part="heat" data-after="hsup" data-at="272" data-len="34" style="stroke-width:calc(var(--sw,1)*6.8px)"></path><path class="po" d="M918 360 L928.8 360 Q936 360 936 367.2 L936 586.8 Q936 594 943.2 594 L1048.8 594 Q1056 594 1056 601.2 L1056 646" data-p="hret" data-sys="hot" data-part="heat" data-after="hsup" data-at="472" data-len="424" style="stroke-width:calc(var(--sw,1)*8.5px)"></path><path class="po" d="M918 526 L936 526" data-p="hrg" data-sys="hot" data-part="heat" data-after="hret" data-at="184" data-len="18" style="stroke-width:calc(var(--sw,1)*6.8px)"></path></g><g class="pw-g" data-l="ink"><path class="pw" d="M1088 646 L1088 619.2 Q1088 612 1095.2 612 L1372.8 612 Q1380 612 1380 604.8 L1380 303.2 Q1380 296 1372.8 296 L1297 296" data-p="h1" data-sys="hot" data-part="water" data-len="725" style="stroke-width:calc(var(--sw,1)*6.6px)"></path><path class="pw" d="M1380 470 L1243 470" data-p="hs" data-sys="hot" data-part="water" data-after="h1" data-at="468" data-len="137" style="stroke-width:calc(var(--sw,1)*5px)"></path><path class="pw" d="M1072 646 L1072 587.2 Q1072 580 1064.8 580 L959.2 580 Q952 580 952 572.8 L952 335.2 Q952 328 944.8 328 L918 328" data-p="hsup" data-sys="hot" data-part="heat" data-len="472" style="stroke-width:calc(var(--sw,1)*6.6px)"></path><path class="pw" d="M952 494 L918 494" data-p="hsg" data-sys="hot" data-part="heat" data-after="hsup" data-at="272" data-len="34" style="stroke-width:calc(var(--sw,1)*5px)"></path><path class="pw" d="M918 360 L928.8 360 Q936 360 936 367.2 L936 586.8 Q936 594 943.2 594 L1048.8 594 Q1056 594 1056 601.2 L1056 646" data-p="hret" data-sys="hot" data-part="heat" data-after="hsup" data-at="472" data-len="424" style="stroke-width:calc(var(--sw,1)*6.6px)"></path><path class="pw" d="M918 526 L936 526" data-p="hrg" data-sys="hot" data-part="heat" data-after="hret" data-at="184" data-len="18" style="stroke-width:calc(var(--sw,1)*5px)"></path></g><g class="pc-g" data-l="core"><path class="pc hot" d="M1088 646 L1088 619.2 Q1088 612 1095.2 612 L1372.8 612 Q1380 612 1380 604.8 L1380 303.2 Q1380 296 1372.8 296 L1297 296" data-p="h1" data-sys="hot" data-part="water" data-len="725" style="stroke-width:calc(var(--sw,1)*4.4px)"></path><path class="pc hot" d="M1380 470 L1243 470" data-p="hs" data-sys="hot" data-part="water" data-after="h1" data-at="468" data-len="137" style="stroke-width:calc(var(--sw,1)*3.2px)"></path><path class="pc hot" d="M1072 646 L1072 587.2 Q1072 580 1064.8 580 L959.2 580 Q952 580 952 572.8 L952 335.2 Q952 328 944.8 328 L918 328" data-p="hsup" data-sys="hot" data-part="heat" data-len="472" style="stroke-width:calc(var(--sw,1)*4.4px)"></path><path class="pc hot" d="M952 494 L918 494" data-p="hsg" data-sys="hot" data-part="heat" data-after="hsup" data-at="272" data-len="34" style="stroke-width:calc(var(--sw,1)*3.2px)"></path><path class="pc hot" d="M918 360 L928.8 360 Q936 360 936 367.2 L936 586.8 Q936 594 943.2 594 L1048.8 594 Q1056 594 1056 601.2 L1056 646" data-p="hret" data-sys="hot" data-part="heat" data-after="hsup" data-at="472" data-len="424" style="stroke-width:calc(var(--sw,1)*4.4px)"></path><path class="pc hot" d="M918 526 L936 526" data-p="hrg" data-sys="hot" data-part="heat" data-after="hret" data-at="184" data-len="18" style="stroke-width:calc(var(--sw,1)*3.2px)"></path></g></g></g>
+<g class="fits" data-l="fits"><g class="ft" data-p="c1" data-sys="cold" data-part="conn" data-at="20"><path class="vl" d="M842 656.5L858 671.5V656.5L842 671.5Z"></path><path class="vs" d="M850 656.5V648.5M845.5 648.5H854.5"></path></g><g class="ft" data-p="c1" data-sys="cold" data-part="conn" data-at="54"><circle class="mt" cx="884" cy="664" r="12.5"></circle><path class="vs" d="M878 667H890M884 667V657"></path></g><g class="ft" data-p="c1" data-sys="cold" data-part="conn" data-at="88"><path class="vl" d="M910 656.5L926 671.5V656.5L910 671.5Z"></path><path class="vs" d="M918 656.5V648.5M913.5 648.5H922.5"></path></g><g class="ft" data-p="cr" data-sys="cold" data-part="water" data-at="24"><path class="vl" d="M996.5 632L1011.5 648V632L996.5 648Z"></path><path class="vs" d="M1011.5 640H1018.5M1018.5 636V644"></path></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="358"><path class="vl" d="M1372.5 572L1387.5 588V572L1372.5 588Z"></path><path class="vs" d="M1387.5 580H1394.5M1394.5 576V584"></path></g><g class="ft" data-p="g1" data-sys="gas" data-part="gas" data-at="602"><path class="vl" d="M972 608.5L988 623.5V608.5L972 623.5Z"></path><path class="vs" d="M980 608.5V600.5M975.5 600.5H984.5"></path></g><g class="ft" data-p="c0" data-sys="cold" data-part="conn" data-at="15.9"><rect class="rg" x="259.1" y="656.7" width="3.6" height="14.7" rx="0.8"></rect></g><g class="ft" data-p="c0" data-sys="cold" data-part="conn" data-at="569.1"><rect class="rg" x="812.3" y="656.7" width="3.6" height="14.7" rx="0.8"></rect></g><g class="ft" data-p="c0" data-sys="cold" data-part="conn" data-at="5"><rect class="rg" x="248.2" y="656.7" width="3.6" height="14.7" rx="0.8"></rect></g><g class="ft" data-p="c0" data-sys="cold" data-part="conn" data-at="580"><rect class="rg" x="823.2" y="656.7" width="3.6" height="14.7" rx="0.8"></rect></g><g class="ft" data-p="c0" data-sys="cold" data-part="conn" data-at="195"><rect class="rg" x="438.2" y="656.7" width="3.6" height="14.7" rx="0.8"></rect></g><g class="ft" data-p="c0" data-sys="cold" data-part="conn" data-at="390"><rect class="rg" x="633.2" y="656.7" width="3.6" height="14.7" rx="0.8"></rect></g><g class="ft" data-p="c1" data-sys="cold" data-part="conn" data-at="15.1"><rect class="rg" x="843.3" y="657.2" width="3.6" height="13.7" rx="0.8"></rect></g><g class="ft" data-p="c1" data-sys="cold" data-part="conn" data-at="158.9"><rect class="rg" x="987.1" y="657.2" width="3.6" height="13.7" rx="0.8"></rect></g><g class="ft" data-p="c1" data-sys="cold" data-part="conn" data-at="5"><rect class="rg" x="833.2" y="657.2" width="3.6" height="13.7" rx="0.8"></rect></g><g class="ft" data-p="c1" data-sys="cold" data-part="conn" data-at="169"><rect class="rg" x="997.2" y="657.2" width="3.6" height="13.7" rx="0.8"></rect></g><g class="ft" data-p="cb" data-sys="cold" data-part="water" data-at="12.8"><rect class="rg" x="938.5" y="675" width="11" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="cb" data-sys="cold" data-part="water" data-at="27.2"><rect class="rg" x="938.5" y="689.4" width="11" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="cb" data-sys="cold" data-part="water" data-at="5"><rect class="rg" x="938.5" y="667.2" width="11" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="cb" data-sys="cold" data-part="water" data-at="52.8"><rect class="rg" x="955" y="698.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cb" data-sys="cold" data-part="water" data-at="113.2"><rect class="rg" x="1015.4" y="698.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cb" data-sys="cold" data-part="water" data-at="121"><rect class="rg" x="1023.2" y="698.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cr" data-sys="cold" data-part="water" data-at="14.2"><rect class="rg" x="997.7" y="648" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="cr" data-sys="cold" data-part="water" data-at="353.8"><rect class="rg" x="997.7" y="308.4" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="cr" data-sys="cold" data-part="water" data-at="5"><rect class="rg" x="997.7" y="657.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="cr" data-sys="cold" data-part="water" data-at="184"><rect class="rg" x="997.7" y="478.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="cr" data-sys="cold" data-part="water" data-at="382.2"><rect class="rg" x="1016.4" y="289.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="cr" data-sys="cold" data-part="water" data-at="633.8"><rect class="rg" x="1268" y="289.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="cr" data-sys="cold" data-part="water" data-at="643"><rect class="rg" x="1277.2" y="289.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="cr" data-sys="cold" data-part="water" data-at="508"><rect class="rg" x="1142.2" y="289.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="cs1" data-sys="cold" data-part="water" data-at="12.8"><rect class="rg" x="1015" y="494.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs1" data-sys="cold" data-part="water" data-at="63.2"><rect class="rg" x="1065.4" y="494.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs1" data-sys="cold" data-part="water" data-at="5"><rect class="rg" x="1007.2" y="494.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs1" data-sys="cold" data-part="water" data-at="71"><rect class="rg" x="1073.2" y="494.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs2" data-sys="cold" data-part="water" data-at="12.8"><rect class="rg" x="1015" y="464.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs2" data-sys="cold" data-part="water" data-at="211.2"><rect class="rg" x="1213.4" y="464.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs2" data-sys="cold" data-part="water" data-at="5"><rect class="rg" x="1007.2" y="464.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs2" data-sys="cold" data-part="water" data-at="219"><rect class="rg" x="1221.2" y="464.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs3" data-sys="cold" data-part="water" data-at="12.8"><rect class="rg" x="1015" y="334.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs3" data-sys="cold" data-part="water" data-at="63.2"><rect class="rg" x="1065.4" y="334.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs3" data-sys="cold" data-part="water" data-at="5"><rect class="rg" x="1007.2" y="334.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="cs3" data-sys="cold" data-part="water" data-at="71"><rect class="rg" x="1073.2" y="334.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="19.8"><rect class="rg" x="1081.7" y="624.4" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="5"><rect class="rg" x="1081.7" y="639.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="48.2"><rect class="rg" x="1100.4" y="605.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="311.8"><rect class="rg" x="1364" y="605.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="180"><rect class="rg" x="1232.2" y="605.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="340.2"><rect class="rg" x="1373.7" y="596" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="627.8"><rect class="rg" x="1373.7" y="308.4" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="484"><rect class="rg" x="1373.7" y="452.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="656.2"><rect class="rg" x="1364" y="289.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="710.8"><rect class="rg" x="1309.4" y="289.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="h1" data-sys="hot" data-part="water" data-at="720"><rect class="rg" x="1300.2" y="289.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="hs" data-sys="hot" data-part="water" data-at="12.8"><rect class="rg" x="1365.4" y="464.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="hs" data-sys="hot" data-part="water" data-at="124.2"><rect class="rg" x="1254" y="464.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="hs" data-sys="hot" data-part="water" data-at="5"><rect class="rg" x="1373.2" y="464.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="hs" data-sys="hot" data-part="water" data-at="132"><rect class="rg" x="1246.2" y="464.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="hsup" data-sys="hot" data-part="heat" data-at="14.2"><rect class="rg" x="1065.7" y="630" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="hsup" data-sys="hot" data-part="heat" data-at="51.8"><rect class="rg" x="1065.7" y="592.4" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="hsup" data-sys="hot" data-part="heat" data-at="5"><rect class="rg" x="1065.7" y="639.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="hsup" data-sys="hot" data-part="heat" data-at="80.2"><rect class="rg" x="1056" y="573.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="hsup" data-sys="hot" data-part="heat" data-at="171.8"><rect class="rg" x="964.4" y="573.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="hsup" data-sys="hot" data-part="heat" data-at="200.2"><rect class="rg" x="945.7" y="564" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="hsup" data-sys="hot" data-part="heat" data-at="423.8"><rect class="rg" x="945.7" y="340.4" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="hsup" data-sys="hot" data-part="heat" data-at="452.2"><rect class="rg" x="936" y="321.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="hsup" data-sys="hot" data-part="heat" data-at="467"><rect class="rg" x="921.2" y="321.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="hsg" data-sys="hot" data-part="heat" data-at="21.2"><rect class="rg" x="929" y="488.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="hsg" data-sys="hot" data-part="heat" data-at="5"><rect class="rg" x="945.2" y="488.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="hsg" data-sys="hot" data-part="heat" data-at="29"><rect class="rg" x="921.2" y="488.5" width="3.6" height="11" rx="0.8"></rect></g><g class="ft" data-p="hret" data-sys="hot" data-part="heat" data-at="32.2"><rect class="rg" x="929.7" y="372.4" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="hret" data-sys="hot" data-part="heat" data-at="237.8"><rect class="rg" x="929.7" y="578" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="hret" data-sys="hot" data-part="heat" data-at="266.2"><rect class="rg" x="948.4" y="587.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="hret" data-sys="hot" data-part="heat" data-at="357.8"><rect class="rg" x="1040" y="587.7" width="3.6" height="12.7" rx="0.8"></rect></g><g class="ft" data-p="hret" data-sys="hot" data-part="heat" data-at="386.2"><rect class="rg" x="1049.7" y="606.4" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="hret" data-sys="hot" data-part="heat" data-at="409.8"><rect class="rg" x="1049.7" y="630" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="hret" data-sys="hot" data-part="heat" data-at="419"><rect class="rg" x="1049.7" y="639.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="sst" data-sys="sew" data-part="water" data-at="14.2"><rect class="rg" x="1395.7" y="398.4" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="sst" data-sys="sew" data-part="water" data-at="369.8"><rect class="rg" x="1395.7" y="754" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="sst" data-sys="sew" data-part="water" data-at="5"><rect class="rg" x="1395.7" y="389.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="sst" data-sys="sew" data-part="water" data-at="379"><rect class="rg" x="1395.7" y="763.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="sst" data-sys="sew" data-part="water" data-at="128"><rect class="rg" x="1395.7" y="512.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="sst" data-sys="sew" data-part="water" data-at="256"><rect class="rg" x="1395.7" y="640.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="scol" data-sys="sew" data-part="conn" data-at="16.3"><rect class="rg" x="1383.9" y="762.7" width="3.6" height="15.2" rx="0.8"></rect></g><g class="ft" data-p="scol" data-sys="sew" data-part="conn" data-at="1249.9"><rect class="rg" x="150.5" y="788.1" width="3.6" height="15.2" rx="0.8"></rect></g><g class="ft" data-p="scol" data-sys="sew" data-part="conn" data-at="5"><rect class="rg" x="1395.2" y="762.5" width="3.6" height="15.2" rx="0.8"></rect></g><g class="ft" data-p="scol" data-sys="sew" data-part="conn" data-at="1261.3"><rect class="rg" x="139.2" y="788.3" width="3.6" height="15.2" rx="0.8"></rect></g><g class="ft" data-p="scol" data-sys="sew" data-part="conn" data-at="211"><rect class="rg" x="1189.2" y="766.7" width="3.6" height="15.2" rx="0.8"></rect></g><g class="ft" data-p="scol" data-sys="sew" data-part="conn" data-at="422.1"><rect class="rg" x="978.2" y="771.1" width="3.6" height="15.2" rx="0.8"></rect></g><g class="ft" data-p="scol" data-sys="sew" data-part="conn" data-at="633.1"><rect class="rg" x="767.2" y="775.4" width="3.6" height="15.2" rx="0.8"></rect></g><g class="ft" data-p="scol" data-sys="sew" data-part="conn" data-at="844.2"><rect class="rg" x="556.2" y="779.7" width="3.6" height="15.2" rx="0.8"></rect></g><g class="ft" data-p="scol" data-sys="sew" data-part="conn" data-at="1055.2"><rect class="rg" x="345.2" y="784.1" width="3.6" height="15.2" rx="0.8"></rect></g><g class="ft" data-p="svent" data-sys="sew" data-part="water" data-at="14.2"><rect class="rg" x="1395.7" y="370" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="svent" data-sys="sew" data-part="water" data-at="231.8"><rect class="rg" x="1395.7" y="152.4" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="svent" data-sys="sew" data-part="water" data-at="5"><rect class="rg" x="1395.7" y="379.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="svent" data-sys="sew" data-part="water" data-at="241"><rect class="rg" x="1395.7" y="143.2" width="12.7" height="3.6" rx="0.8"></rect></g><g class="ft" data-p="svent" data-sys="sew" data-part="water" data-at="123"><rect class="rg" x="1395.7" y="261.2" width="12.7" height="3.6" rx="0.8"></rect></g></g>
+<g class="" data-l="fix"><g class="fxg" data-sys="hot" data-part="heat"><path class="ln ln-m fx wf" d="M866 484H918V536H866Z"></path><path class="ln fx" d="M872.5 489V531M879 489V531M885.5 489V531M892 489V531M898.5 489V531M905 489V531M911.5 489V531"></path><path class="ln fx" d="M866 489H918M866 531H918"></path></g><g class="fxg" data-sys="hot" data-part="heat"><path class="ln ln-m fx wf" d="M866 318H918V370H866Z"></path><path class="ln fx" d="M872.5 323V365M879 323V365M885.5 323V365M892 323V365M898.5 323V365M905 323V365M911.5 323V365"></path><path class="ln fx" d="M866 323H918M866 365H918"></path></g><g class="fxg" data-sys="hot gas" data-part="heat gas water"><path class="ln ln-m fx wf" d="M1035 646H1091Q1096 646 1096 651V722H1030V651Q1030 646 1035 646Z"></path><path class="ln fx" d="M1039.5 661a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0 -11 0"></path><path class="ln ln-m fx" d="M1070.92 680c-8 -8 -2 -14 -2 -20c8 4 12 12 8 20c4 -2 6 -6 6 -10c8 10 2 22 -10 22c-8 0 -12 -6 -2 -12z"></path><path class="ln fx" d="M1038 708H1088"></path></g><g class="fxg" data-sys="cold sew" data-part="water"><path class="ln ln-m fx wf" d="M1080 486H1096V520H1080Z"></path><path class="ln ln-m wf fx" d="M1080 513H1060Q1056 513 1057 520Q1060 532 1072 532V540H1090V532Q1096 526 1096 520"></path><path class="ln fx" d="M1060 510H1080"></path></g><g class="fxg" data-sys="cold sew" data-part="water"><path class="ln ln-m fx wf" d="M1080 320H1096V354H1080Z"></path><path class="ln ln-m wf fx" d="M1080 347H1060Q1056 347 1057 354Q1060 366 1072 366V374H1090V366Q1096 360 1096 354"></path><path class="ln fx" d="M1060 344H1080"></path></g><g class="fxg" data-sys="cold hot sew" data-part="water"><path class="ln ln-m fx wf" d="M1180 484H1292V540H1180Z"></path><path class="ln fx" d="M1236 484V540"></path><path class="ln fx" d="M1186 481H1286"></path><path class="ln ln-m fx" d="M1211.36 481Q1211.36 474 1222.56 474H1249.44Q1260.64 474 1260.64 481"></path></g><g class="fxg" data-sys="cold hot sew" data-part="water"><path class="ln ln-m fx wf" d="M1196 338H1308V356Q1308 369 1292 369H1212Q1196 369 1196 356Z"></path><path class="ln fx" d="M1202 344H1302"></path><path class="ln fx" d="M1210 369V374M1294 369V374"></path></g><g class="fxg" data-sys="vent" data-part="vent"><path class="ln ln-m fx wf" d="M1056 150H1160V204H1056Z"></path><path class="ln fx" d="M1056 150L1160 204M1160 150L1056 204"></path><path class="ln fx" d="M1064 158H1152V196H1064Z"></path></g><g class="fxg" data-sys="vent" data-part="vent"><path class="ln ln-m fx wf" d="M840 238H908Q916 238 916 246V256Q916 262 908 262H840Q832 262 832 256V246Q832 238 840 238Z"></path><path class="ln fx" d="M838 255H910"></path><path class="ln fx" d="M842 246H858"></path></g><g class="fxg" data-sys="vent" data-part="vent"><path class="ln ln-m fx wf" d="M722 506H786V554H722Z"></path><path class="ln fx" d="M731.6 530a17.3 17.3 0 1 0 34.6 0a17.3 17.3 0 1 0 -34.6 0"></path><path class="ln fx" d="M743.88 530H753.88M748.88 525V535"></path><path class="ln fx" d="M772 516.7H782M772 523.3H782M772 530H782M772 536.7H782M772 543.3H782"></path><path class="ln fx" d="M728 554V558M780 554V558"></path></g><g class="fxg" data-sys="gas" data-part="gas"><path class="ln ln-m fx wf" d="M436 478H476V528H436Z"></path><path class="ln fx wf" d="M440 528H472V560H440Z"></path><path class="ln ln-m fx" d="M443 486H469V508H443Z"></path><path class="ln fx" d="M451 496a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"></path><path class="ln fx" d="M446 528V508M466 508V528"></path></g><g class="fxg" data-sys="elec" data-part="elec"><path class="ln ln-m fx wf" d="M398 484H428V560H398Z"></path><path class="ln ln-m fx" d="M404 492H422V508H404Z"></path><path class="ln fx" d="M406 518V530M413 518V530M420 518V530"></path></g><g class="fxg" data-sys="elec" data-part="elec"><path class="ln ln-m fx wf" d="M830 466H858V514H830Z"></path><path class="ln ln-m fx" d="M837 478V492M844 478V492M851 478V492"></path><path class="ln fx" d="M835 502H853"></path></g><g class="fxg" data-sys="site" data-part="site"><path class="ln fx" d="M1482 498V560M1486 498V560M1544 498V560M1548 498V560"></path><path class="ln ln-m fx wf" d="M1470 440H1560V498H1470Z"></path><path class="ln ln-m fx" d="M1478 478H1508M1481 478a12 12 0 0 1 24 0M1493 466V471"></path><path class="ln fx" d="M1516 454H1552M1516 464H1552M1516 474H1546M1516 484H1538"></path></g><g class="fxg" data-sys="cold hot" data-part="water"><path class="ln ln-m fx wf" d="M1231 470a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"></path><path class="ln ln-m fx" d="M1236 475V481"></path></g><g class="fxg" data-sys="cold hot" data-part="water"><path class="ln ln-m fx wf" d="M1285.5 296a5 5 0 1 0 10 0a5 5 0 1 0 -10 0"></path><path class="ln ln-m fx" d="M1290.5 301V336"></path></g><g class="fxg cap" data-sys="sew" data-part="water" data-cap="svent"><path class="ln ln-m dct fx" d="M1391 140Q1402 129 1413 140"></path><path class="ln fx" d="M1395 142H1409"></path></g></g>
+<g class="" data-l="duct-w" data-sys="vent" data-part="vent"><rect class="wwf" data-d="1" data-o="b" x="1076.5" y="52" width="15" height="98"></rect><rect class="wwf" data-d="2" data-o="b" x="1124.5" y="40" width="15" height="110"></rect><rect class="wwf" data-d="3" data-o="t" x="1092.5" y="204" width="15" height="32"></rect><rect class="wwf" data-d="4" data-o="l" x="1100" y="236.5" width="248" height="15"></rect></g><g class="" data-l="duct" data-sys="vent" data-part="vent"><g class="dg" data-d="1"><path class="ln ln-m dct" d="M1076.5 150V52"></path><path class="ln ln-m dct" d="M1091.5 150V52"></path></g><path class="ln air" d="M1080.6 127.9L1084 123.1L1087.4 127.9M1080.6 78.9L1084 74.1L1087.4 78.9" data-d="1"></path><g class="dg" data-d="2"><path class="ln ln-m dct" d="M1124.5 150V40"></path><path class="ln ln-m dct" d="M1139.5 150V40"></path></g><path class="ln air" d="M1128.6 120.1L1132 124.9L1135.4 120.1M1128.6 65.1L1132 69.9L1135.4 65.1" data-d="2"></path><g class="cap" data-cap="1"><path class="ln ln-m dct" d="M1073 52Q1084 41 1095 52"></path><path class="ln" d="M1077 54H1091"></path></g><g class="cap" data-cap="2"><path class="ln ln-m dct" d="M1121 40Q1132 29 1143 40"></path><path class="ln" d="M1125 42H1139"></path></g><g class="dg" data-d="3"><path class="ln ln-m dct" d="M1092.5 204V236"></path><path class="ln ln-m dct" d="M1107.5 204V236"></path></g><g class="dg" data-d="4"><path class="ln ln-m dct" d="M1100 236.5H1348"></path><path class="ln ln-m dct" d="M1100 251.5H1348"></path></g><path class="ln air" d="M1122.3999999999999 240.6L1127.2 244L1122.3999999999999 247.4M1172 240.6L1176.8000000000002 244L1172 247.4M1221.6 240.6L1226.4 244L1221.6 247.4M1271.1999999999998 240.6L1276 244L1271.1999999999998 247.4M1320.8 240.6L1325.6000000000001 244L1320.8 247.4" data-d="4"></path><path class="ln" d="M1100 236V252" data-d="4"></path><path class="ln ln-m dct" d="M1121 252q9 8 18 0" data-dif="1"></path><path class="ln ln-m dct" d="M1201 252q9 8 18 0" data-dif="1"></path><path class="ln ln-m dct" d="M1281 252q9 8 18 0" data-dif="1"></path><path class="ln ln-m dct" d="M1337 252q9 8 18 0" data-dif="1"></path><path class="ln dct" d="M832 252H777V506" data-ref="1"></path><path class="ln dct" d="M832 258H783V506" data-ref="1"></path></g>
+<g class="" data-l="dims"><path class="ln dm" d="M800 818H1109M1131 818H1440"></path><path class="ln dm-e" d="M800 764V825M1440 764V825"></path></g><g class="" data-l="dimt"><path class="ah" d="M800 818l10 -2.8v5.6z"></path><path class="ah" d="M1440 818l-10 -2.8v5.6z"></path><text class="tx dl" x="1120" y="822.2" text-anchor="middle">A</text></g>
+<g class="" data-l="labels"><text class="tx lb" x="30" y="540">Ulica</text><text class="tx lb" x="512" y="540">Działka</text><text class="tx lb lb-s" data-part="elec" x="604" y="591">Prąd</text><text class="tx lb lb-s" data-part="gas" x="500" y="638">Gaz</text><text class="tx lb lb-s" data-part="conn" x="560" y="653">Przyłącze wody</text><text class="tx lb lb-s" data-part="conn" x="470" y="774" transform="rotate(-1.18 470 774)">Przyłącze kanalizacji</text></g>
+</g>
+<g class="leads"><path d="M866 344L652 292"></path><circle cx="866" cy="344" r="4.5"></circle><path d="M824 616L652 588"></path><circle cx="824" cy="616" r="4.5"></circle><path d="M800 664L652 706"></path><circle cx="800" cy="664" r="4.5"></circle><path d="M1160 177L1286 104"></path><circle cx="1160" cy="177" r="4.5"></circle><path d="M1308 356L1462 262"></path><circle cx="1308" cy="356" r="4.5"></circle><path d="M1515 498L1488 640"></path><circle cx="1515" cy="498" r="4.5"></circle></g>
+</svg>
+<a class="lab" data-p="heat" href="#uslugi" style="left:1.13%;top:31.50%">Ogrzewanie<span aria-hidden="true">→</span></a><a class="lab" data-p="gas" href="#uslugi" style="left:1.13%;top:68.50%">Gaz<span aria-hidden="true">→</span></a><a class="lab" data-p="conn" href="przylacza.html" style="left:1.13%;top:83.25%">Przyłącza<span aria-hidden="true">→</span></a><a class="lab" data-p="vent" href="#uslugi" style="left:60.94%;top:8.00%">Wentylacja<span aria-hidden="true">→</span></a><a class="lab" data-p="water" href="#uslugi" style="left:77.55%;top:27.75%">Woda i<br>kanalizacja<span aria-hidden="true">→</span></a><a class="lab" data-p="site" href="#uslugi" style="left:80.00%;top:75.00%">Nadzór<br>na budowie<span aria-hidden="true">→</span></a>
+</div>
+</figure>
+</div></section>
+
+<section class="svc" id="uslugi" aria-labelledby="h-svc"><div class="wrap svc__grid">
+<div class="svc__head"><h2 id="h-svc">Co projektuję</h2></div>
+<div class="rows-wrap"><ul class="rows" data-rv><li><a class="row row--go" href="przylacza.html"><svg class="pic" viewBox="0 0 88 56" aria-hidden="true" focusable="false"><path d="M4 12H84"></path><path class="t" d="M12 12l-6 6M24 12l-6 6M36 12l-6 6M48 12l-6 6M60 12l-6 6M72 12l-6 6M84 12l-6 6"></path><circle class="w" cx="15" cy="36" r="9"></circle><circle class="k" cx="15" cy="36" r="4.4"></circle><path class="w" d="M24 32H64V40H24Z"></path><path class="c" d="M24 36H64"></path><circle class="w" cx="72" cy="36" r="7.5"></circle><path d="M67.5 38.5H76.5M72 38.5V31.5"></path></svg><span class="row__t"><b>Przyłącza wody i&nbsp;kanalizacji</b><span>Rura od sieci w&nbsp;ulicy do domu i&nbsp;odpływ ścieków do kanału.</span></span><span class="row__go" aria-hidden="true">→</span></a></li><li><div class="row"><svg class="pic" viewBox="0 0 88 56" aria-hidden="true" focusable="false"><rect class="w" x="8" y="6" width="32" height="30" rx="1"></rect><rect x="13" y="11" width="22" height="14"></rect><circle cx="24" cy="18" r="3.6"></circle><path class="g" d="M32 36V46H84"></path><path class="w" d="M56 40L68 52V40L56 52Z"></path><path d="M62 46V34M57.5 34H66.5"></path></svg><span class="row__t"><b>Instalacja gazowa</b><span>Od szafki z&nbsp;gazomierzem do kotła i&nbsp;kuchenki.</span></span></div></li><li><div class="row"><svg class="pic" viewBox="0 0 88 56" aria-hidden="true" focusable="false"><path class="w" d="M12 24H76V29Q76 42 63 42H25Q12 42 12 29Z"></path><path d="M18 29H70"></path><path d="M44 24V12H57V17"></path><circle class="w" cx="44" cy="12" r="3.4"></circle><path class="c" d="M30 42V55"></path><path class="h" d="M58 42V55"></path><path class="s" d="M44 42V55"></path></svg><span class="row__t"><b>Woda i&nbsp;kanalizacja w&nbsp;domu</b><span>Zimna i&nbsp;ciepła woda do każdego kranu, odpływy z&nbsp;łazienki i&nbsp;kuchni.</span></span></div></li><li><div class="row"><svg class="pic" viewBox="0 0 88 56" aria-hidden="true" focusable="false"><rect class="w" x="8" y="9" width="48" height="36" rx="1"></rect><path class="t" d="M15 13V41M22 13V41M29 13V41M36 13V41M43 13V41M50 13V41"></path><path d="M8 14H56M8 40H56"></path><path class="h" d="M56 16H78V55"></path><path class="h" d="M56 38H68V55"></path></svg><span class="row__t"><b>Ogrzewanie</b><span>Kocioł albo pompa ciepła, grzejniki, podłogówka, dobrane do strat ciepła domu.</span></span></div></li><li><div class="row"><svg class="pic" viewBox="0 0 88 56" aria-hidden="true" focusable="false"><path d="M3 26L44 10L85 26"></path><rect class="ko" x="31" y="4" width="8" height="24"></rect><rect class="ko" x="49" y="4" width="8" height="24"></rect><path d="M32 28V6M38 28V6M50 28V6M56 28V6"></path><path d="M29.5 6Q35 1 40.5 6M47.5 6Q53 1 58.5 6"></path><rect class="w" x="22" y="28" width="44" height="22"></rect><path class="t" d="M22 28L66 50M66 28L22 50"></path></svg><span class="row__t"><b>Wentylacja i&nbsp;klimatyzacja</b><span>Rekuperacja, czyli wymiana powietrza, i&nbsp;chłodzenie pokoi latem.</span></span></div></li><li><div class="row"><svg class="pic" viewBox="0 0 88 56" aria-hidden="true" focusable="false"><path d="M3 54H85"></path><path d="M24 38V54M64 38V54"></path><rect class="w" x="12" y="5" width="64" height="33" rx="1"></rect><path d="M18 29H38M20 29a8 8 0 0 1 16 0M28 20V23"></path><path class="t" d="M44 14H70M44 21H70M44 28H62"></path></svg><span class="row__t"><b>Nadzór i&nbsp;kierowanie budową</b><span>Na Śląsku pilnuję, żeby budowa szła zgodnie z&nbsp;projektem.</span></span></div></li></ul>
+<p class="partner">Elektrykę projektuje biuro <a class="inl" href="https://bpekretek.pl" target="_blank" rel="noopener">BPE Michał Kretek</a> z&nbsp;Gliwic, z&nbsp;którym współpracuję.</p></div>
+</div></section>
+
+<section class="how" id="jak" aria-labelledby="h-how"><div class="wrap">
+<h2 id="h-how">Jak zacząć</h2>
+<ol class="run">
+    <li><svg class="run__fit" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><path class="f-b" d="M8 13L36 31V13L8 31Z"></path><path d="M22 22V7M15 7H29"></path></svg><h3>Opowiedz, co budujesz</h3><p>Przez telefon albo SMS: co budujesz albo przebudowujesz i gdzie.</p></li>
+    <li><svg class="run__fit" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><rect class="f-b" x="16" y="9" width="12" height="26" rx="1"></rect></svg><h3>Wyślij, co masz</h3><p>Mapę, warunki z wodociągów lub gazowni, projekt domu.</p></li>
+    <li><svg class="run__fit" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle class="f-b" cx="22" cy="22" r="13"></circle><path d="M15 25H29M22 25V13"></path></svg><h3>Ustalamy zakres i cenę</h3><p>Cenę podaję po rozmowie, zanim zacznę projekt.</p></li>
+    <li><svg class="run__fit" viewBox="0 0 44 44" aria-hidden="true" focusable="false"><circle class="f-b" cx="22" cy="10" r="6"></circle><path d="M22 16V22"></path><path class="f-b" d="M14 22H30V30H14Z"></path></svg><h3>Dostajesz projekt</h3><p>Rysunki i opis, według których wykonawca zbuduje instalację.</p></li>
+  </ol>
+</div></section>
+</main>
+<footer class="fb" id="kontakt" aria-labelledby="fb-h">
+  <div class="fb__row">
+    <div class="fb__who">
+      <h2 id="fb-h">Natalia Rożek</h2>
+      <p>mgr inż., projektantka instalacji sanitarnych</p>
+    </div>
+    <div class="fb__logo"><svg class="fb__draw" viewBox="0 0 1648 1035" role="img" aria-label="pronat">
+<path class="fb__ln" d="M-6000 843H169M1355 843H7648"></path>
+<path class="fb__ln fb__ht" d="M-5976 846l-66 66M-5923 846l-66 66M-5870 846l-66 66M-5817 846l-66 66M-5764 846l-66 66M-5711 846l-66 66M-5658 846l-66 66M-5605 846l-66 66M-5552 846l-66 66M-5499 846l-66 66M-5446 846l-66 66M-5393 846l-66 66M-5340 846l-66 66M-5287 846l-66 66M-5234 846l-66 66M-5181 846l-66 66M-5128 846l-66 66M-5075 846l-66 66M-5022 846l-66 66M-4969 846l-66 66M-4916 846l-66 66M-4863 846l-66 66M-4810 846l-66 66M-4757 846l-66 66M-4704 846l-66 66M-4651 846l-66 66M-4598 846l-66 66M-4545 846l-66 66M-4492 846l-66 66M-4439 846l-66 66M-4386 846l-66 66M-4333 846l-66 66M-4280 846l-66 66M-4227 846l-66 66M-4174 846l-66 66M-4121 846l-66 66M-4068 846l-66 66M-4015 846l-66 66M-3962 846l-66 66M-3909 846l-66 66M-3856 846l-66 66M-3803 846l-66 66M-3750 846l-66 66M-3697 846l-66 66M-3644 846l-66 66M-3591 846l-66 66M-3538 846l-66 66M-3485 846l-66 66M-3432 846l-66 66M-3379 846l-66 66M-3326 846l-66 66M-3273 846l-66 66M-3220 846l-66 66M-3167 846l-66 66M-3114 846l-66 66M-3061 846l-66 66M-3008 846l-66 66M-2955 846l-66 66M-2902 846l-66 66M-2849 846l-66 66M-2796 846l-66 66M-2743 846l-66 66M-2690 846l-66 66M-2637 846l-66 66M-2584 846l-66 66M-2531 846l-66 66M-2478 846l-66 66M-2425 846l-66 66M-2372 846l-66 66M-2319 846l-66 66M-2266 846l-66 66M-2213 846l-66 66M-2160 846l-66 66M-2107 846l-66 66M-2054 846l-66 66M-2001 846l-66 66M-1948 846l-66 66M-1895 846l-66 66M-1842 846l-66 66M-1789 846l-66 66M-1736 846l-66 66M-1683 846l-66 66M-1630 846l-66 66M-1577 846l-66 66M-1524 846l-66 66M-1471 846l-66 66M-1418 846l-66 66M-1365 846l-66 66M-1312 846l-66 66M-1259 846l-66 66M-1206 846l-66 66M-1153 846l-66 66M-1100 846l-66 66M-1047 846l-66 66M-994 846l-66 66M-941 846l-66 66M-888 846l-66 66M-835 846l-66 66M-782 846l-66 66M-729 846l-66 66M-676 846l-66 66M-623 846l-66 66M-570 846l-66 66M-517 846l-66 66M-464 846l-66 66M-411 846l-66 66M-358 846l-66 66M-305 846l-66 66M-252 846l-66 66M-199 846l-66 66M-146 846l-66 66M-93 846l-66 66M-40 846l-66 66M13 846l-66 66M66 846l-66 66M1410 846l-66 66M1463 846l-66 66M1516 846l-66 66M1569 846l-66 66M1622 846l-66 66M1675 846l-66 66M1728 846l-66 66M1781 846l-66 66M1834 846l-66 66M1887 846l-66 66M1940 846l-66 66M1993 846l-66 66M2046 846l-66 66M2099 846l-66 66M2152 846l-66 66M2205 846l-66 66M2258 846l-66 66M2311 846l-66 66M2364 846l-66 66M2417 846l-66 66M2470 846l-66 66M2523 846l-66 66M2576 846l-66 66M2629 846l-66 66M2682 846l-66 66M2735 846l-66 66M2788 846l-66 66M2841 846l-66 66M2894 846l-66 66M2947 846l-66 66M3000 846l-66 66M3053 846l-66 66M3106 846l-66 66M3159 846l-66 66M3212 846l-66 66M3265 846l-66 66M3318 846l-66 66M3371 846l-66 66M3424 846l-66 66M3477 846l-66 66M3530 846l-66 66M3583 846l-66 66M3636 846l-66 66M3689 846l-66 66M3742 846l-66 66M3795 846l-66 66M3848 846l-66 66M3901 846l-66 66M3954 846l-66 66M4007 846l-66 66M4060 846l-66 66M4113 846l-66 66M4166 846l-66 66M4219 846l-66 66M4272 846l-66 66M4325 846l-66 66M4378 846l-66 66M4431 846l-66 66M4484 846l-66 66M4537 846l-66 66M4590 846l-66 66M4643 846l-66 66M4696 846l-66 66M4749 846l-66 66M4802 846l-66 66M4855 846l-66 66M4908 846l-66 66M4961 846l-66 66M5014 846l-66 66M5067 846l-66 66M5120 846l-66 66M5173 846l-66 66M5226 846l-66 66M5279 846l-66 66M5332 846l-66 66M5385 846l-66 66M5438 846l-66 66M5491 846l-66 66M5544 846l-66 66M5597 846l-66 66M5650 846l-66 66M5703 846l-66 66M5756 846l-66 66M5809 846l-66 66M5862 846l-66 66M5915 846l-66 66M5968 846l-66 66M6021 846l-66 66M6074 846l-66 66M6127 846l-66 66M6180 846l-66 66M6233 846l-66 66M6286 846l-66 66M6339 846l-66 66M6392 846l-66 66M6445 846l-66 66M6498 846l-66 66M6551 846l-66 66M6604 846l-66 66M6657 846l-66 66M6710 846l-66 66M6763 846l-66 66M6816 846l-66 66M6869 846l-66 66M6922 846l-66 66M6975 846l-66 66M7028 846l-66 66M7081 846l-66 66M7134 846l-66 66M7187 846l-66 66M7240 846l-66 66M7293 846l-66 66M7346 846l-66 66M7399 846l-66 66M7452 846l-66 66M7505 846l-66 66M7558 846l-66 66"></path>
+<path class="fb__ln" d="M1337 779H7648M1337 796H7648"></path>
+<g class="fb__col"><rect x="1500" y="770" width="11" height="35"></rect><rect x="1680" y="770" width="11" height="35"></rect><rect x="1860" y="770" width="11" height="35"></rect><rect x="2040" y="770" width="11" height="35"></rect><rect x="2220" y="770" width="11" height="35"></rect><rect x="2400" y="770" width="11" height="35"></rect><rect x="2580" y="770" width="11" height="35"></rect><rect x="2760" y="770" width="11" height="35"></rect><rect x="2940" y="770" width="11" height="35"></rect><rect x="3120" y="770" width="11" height="35"></rect><rect x="3300" y="770" width="11" height="35"></rect><rect x="3480" y="770" width="11" height="35"></rect><rect x="3660" y="770" width="11" height="35"></rect><rect x="3840" y="770" width="11" height="35"></rect><rect x="4020" y="770" width="11" height="35"></rect><rect x="4200" y="770" width="11" height="35"></rect><rect x="4380" y="770" width="11" height="35"></rect><rect x="4560" y="770" width="11" height="35"></rect><rect x="4740" y="770" width="11" height="35"></rect><rect x="4920" y="770" width="11" height="35"></rect><rect x="5100" y="770" width="11" height="35"></rect><rect x="5280" y="770" width="11" height="35"></rect><rect x="5460" y="770" width="11" height="35"></rect><rect x="5640" y="770" width="11" height="35"></rect><rect x="5820" y="770" width="11" height="35"></rect><rect x="6000" y="770" width="11" height="35"></rect><rect x="6180" y="770" width="11" height="35"></rect><rect x="6360" y="770" width="11" height="35"></rect><rect x="6540" y="770" width="11" height="35"></rect><rect x="6720" y="770" width="11" height="35"></rect><rect x="6900" y="770" width="11" height="35"></rect><rect x="7080" y="770" width="11" height="35"></rect><rect x="7260" y="770" width="11" height="35"></rect><rect x="7440" y="770" width="11" height="35"></rect></g>
+<image href="img/logo-baner.png" x="0" y="0" width="1648" height="1035"></image>
+</svg></div>
+    <div class="fb__call">
+      <a class="bignum" href="tel:+48508160653">508 160 653</a>
+      <p>Odbieram do 18:00. Możesz też <a class="fb__sms" href="sms:+48508160653">wysłać SMS</a>.</p>
+    </div>
+  </div>
+  <p class="fb__fine">pronat, Knurów, woj. śląskie. NIP 647 246 33 54</p>
+</footer>
+</div>
+
+<script>
+/* the board's logic class, run once as on the canvas */
+class DCLogic { constructor() { this.props = {}; this.state = {}; } setState(s) { Object.assign(this.state, s); } }
+
+class Component extends DCLogic {
+  renderVals() { return {}; }
+  componentDidMount() {
+    if (window.__pnBoot) return;
+    window.__pnBoot = true;
+    var d = document.documentElement;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('rm');
+
+    (function () {
+      var d = document.documentElement, svg = document.getElementById('dh');
+      if (!svg || !svg.animate || d.classList.contains('rm')) { d.classList.add('ready', 'intro-done'); return; }
+      var sheet = svg.querySelector('.sheet');
+      if (sheet) sheet.style.visibility = 'hidden';
+      var started = false;
+      var go = function () {
+        if (started) return; started = true;
+        if (sheet) sheet.style.visibility = '';
+        var ease = 'cubic-bezier(.33,1,.68,1)', water = 'cubic-bezier(.2,.6,.4,1)';
+        var len = function (el) { try { return Math.ceil(el.getTotalLength()); } catch (e) { return 0; } };
+        var draw = function (el, delay, speed, easing) {
+          var L = len(el); if (!L) return delay;
+          var dur = Math.max(160, L / speed * 1000);
+          el.animate([{ strokeDasharray: L + ' ' + L, strokeDashoffset: L }, { strokeDasharray: L + ' ' + L, strokeDashoffset: 0 }],
+            { duration: dur, delay: delay, easing: easing || 'linear', fill: 'backwards' });
+          return delay + dur;
+        };
+        var fade = function (el, delay, dur) { el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: dur || 300, delay: delay, easing: ease, fill: 'backwards' }); };
+        var $ = function (s, c) { return Array.prototype.slice.call((c || svg).querySelectorAll(s)); };
+        var layer = function (n) { return $('[data-l="' + n + '"] path'); };
+        layer('ground').forEach(function (el, i) { draw(el, 100 + i * 60, 2400); });
+        layer('hatch').forEach(function (el, i) { draw(el, 300 + i * 120, 3800); });
+        layer('mains').forEach(function (el, i) { draw(el, 450 + i * 80, 700); });
+        layer('struct').forEach(function (el, i) { draw(el, 800 + i * 240, 1500); });
+        layer('struct2').forEach(function (el, i) { draw(el, 980 + i * 100, 1500); });
+        layer('struct3').forEach(function (el, i) { draw(el, 1300 + i * 80, 1300); });
+        layer('win').forEach(function (el, i) { draw(el, 1600 + i * 60, 1500); });
+        $('[data-l="win-w"] .wwf').forEach(function (r, k) { fade(r, 1600 + 2 * k * 60, 120); });   /* a window's cut opens with its lintel */
+        $('.hf').forEach(function (el) { fade(el, 1700, 700); });
+        layer('elec').forEach(function (el, i) { draw(el, 1700 + i * 80, 1300); });
+        var inkEnd = {};
+        $('.po[data-p]').forEach(function (po, i) {
+          var id = po.getAttribute('data-p'), pw = svg.querySelector('.pw[data-p="' + id + '"]');
+          inkEnd[id] = draw(po, 1800 + i * 70, 1000); if (pw) draw(pw, 1800 + i * 70, 1000);
+        });
+        $('.gmask[data-m="ink"]').forEach(function (el) { draw(el, 1900, 1000); });
+        $('[data-l="fix"] .fxg:not(.cap):not([data-sys="vent"])').forEach(function (g, i) { fade(g, 2000 + i * 40, 350); });
+        $('[data-l="fix"] .fxg.cap').forEach(function (g) { fade(g, inkEnd.svent || 3000, 250); });   /* the stack's cap when its pipe reaches the roof */
+        $('.mfill').forEach(function (el) { fade(el, 2500, 300); });
+        $('.ft').forEach(function (el) { fade(el, 2600, 200); });
+        var start = { cold: 2600, hot: 3400, sew: 3800 };
+        ['cold', 'hot', 'sew'].forEach(function (s) { $('.pc.' + s).forEach(function (el, i) { draw(el, start[s] + i * 90, 640, water); }); });
+        $('.gmask[data-m="fill"]').forEach(function (el) { draw(el, 3000, 900); });
+        /* ventilation: the recuperator, then each duct grows out of it with its white knock-out, a cap when the duct reaches
+         * the roof, the ceiling duct and diffusers, then the air conditioner */
+        var dl = svg.querySelector('[data-l="duct"]'), KO = { b: '50% 100%', t: '50% 0%', l: '0% 50%', r: '100% 50%' };
+        var vent = $('[data-l="fix"] .fxg[data-sys="vent"]'), V0 = 2700;
+        if (vent[0]) fade(vent[0], V0, 300);
+        var duct = function (k, at) {
+          var ws = dl ? $('.dg[data-d="' + k + '"] path', dl) : [];
+          if (!ws.length) return at;
+          var dur = Math.max(160, len(ws[0]) / 900 * 1000);
+          ws.forEach(function (el) { draw(el, at, 900); });
+          $('[data-l="duct-w"] .wwf[data-d="' + k + '"]').forEach(function (r) {
+            var o = r.getAttribute('data-o'), s = (o === 'l' || o === 'r') ? 'scaleX' : 'scaleY';
+            r.style.transformBox = 'fill-box'; r.style.transformOrigin = KO[o];
+            r.animate([{ transform: s + '(0)' }, { transform: s + '(1)' }], { duration: dur, delay: at, easing: 'linear', fill: 'backwards' });
+          });
+          $('path[data-d="' + k + '"]', dl).forEach(function (el) { draw(el, at + dur * 0.6, 1200); });
+          $('.cap[data-cap="' + k + '"] path', dl).forEach(function (el, i) { draw(el, at + dur + i * 60, 300); });
+          return at + dur + 200;
+        };
+        var e3 = duct(3, V0 + 250);
+        duct(1, V0 + 250); duct(2, V0 + 300);
+        var e4 = duct(4, e3 - 150);
+        if (dl) $('path[data-dif]', dl).forEach(function (el, i) { draw(el, e4 - 350 + i * 70, 900); });
+        if (vent[1]) fade(vent[1], e4 - 200, 300);
+        if (dl) $('path[data-ref]', dl).forEach(function (el, i) { draw(el, e4 + 100 + i * 60, 900); });
+        if (vent[2]) fade(vent[2], e4 + 600, 300);
+        layer('dims').forEach(function (el, i) { draw(el, 4200 + i * 100, 1500); });
+        $('.tx, .ah').forEach(function (el) { fade(el, 4500, 400); });
+        
+        $('.leads path').forEach(function (el, i) { draw(el, 4300 + i * 110, 700); });
+        $('.leads circle').forEach(function (el, i) { fade(el, 4300 + i * 110, 200); });   /* the anchor dots come with their lead, never before the drawing */
+        $('.hfig .lab', document).forEach(function (el, i) {
+          el.animate([{ opacity: 0, transform: 'translateY(calc(-50% + 10px))' }, { opacity: 1, transform: 'translateY(-50%)' }],
+            { duration: 420, delay: 4550 + i * 110, easing: ease, fill: 'backwards' });
+        });
+        d.classList.add('ready', 'intro-done');
+      };
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (es) {
+          if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); go(); }
+        }, { threshold: 0.05 });
+        io.observe(svg);
+      } else go();
+    })();
+/* reveal.js - things come alive when they come into view: the pipe run fills with water fitting by fitting, groups marked
+ * data-rv rise in one after another, a service figure's pipes fill from their source. IntersectionObserver with the
+ * implicit root watches the TOP-LEVEL viewport, so inside a canvas board it waits until the board is panned into view.
+ * Content is there without it (no script, no observer, reduced motion): only the fittings' pop and the water wait.
+ * Shared: the vision 4 site loads this file; the canvas boards of visions 1, 3 and 4 inline it (szkice/runda3/common.py). */
+(function () {
+  'use strict';
+  var d = document.documentElement;
+  if (d.getAttribute('data-rv-on')) return;              /* a board may mount twice */
+  d.setAttribute('data-rv-on', '1');
+  d.classList.add('js');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var groups = [].slice.call(document.querySelectorAll('.run, [data-rv]'));
+  var figs = [].slice.call(document.querySelectorAll('.fig'));
+  function fill(fig) {                                     /* the figure's water, heat and sewage run from their source */
+    var svg = fig.querySelector('svg:not([hidden])');
+    [].slice.call(fig.querySelectorAll('svg')).forEach(function (s) { if (s.getBoundingClientRect().width > 0) svg = s; });
+    if (svg && svg.animate && !reduce) {
+      [].slice.call(svg.querySelectorAll('.pc, .gmask[data-m="fill"]')).forEach(function (el, i) {
+        var L = Math.ceil(el.getTotalLength ? el.getTotalLength() : 0);
+        if (!L) return;
+        el.animate([{ strokeDasharray: L + ' ' + L, strokeDashoffset: L }, { strokeDasharray: L + ' ' + L, strokeDashoffset: 0 }],
+          { duration: Math.max(600, L / 640 * 1000), delay: 200 + i * 110, easing: 'cubic-bezier(.2,.6,.4,1)', fill: 'backwards' });
+      });
+    }
+    fig.classList.add('in');
+  }
+  function show(el) { if (el.classList.contains('fig')) fill(el); else el.classList.add('in'); }
+  if (reduce || !('IntersectionObserver' in window)) { groups.concat(figs).forEach(function (el) { el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (x) { if (x.isIntersecting) { io.unobserve(x.target); show(x.target); } });
+  }, { threshold: 0.15 });
+  groups.concat(figs).forEach(function (el) { io.observe(el); });
+})();
+
+  }
+}
+
+(function () { var c = new Component(); if (c.componentDidMount) c.componentDidMount(); })();
+</script>
+</body>
+</html>
